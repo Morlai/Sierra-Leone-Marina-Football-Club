@@ -29,18 +29,68 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Custom CSS to force mobile menu to be fully visible and handle dropdowns -->
+  <!-- Custom CSS for mobile menu with close button -->
   <style>
+    /* Reopen button - hidden by default, shown when menu is closed */
+    #mobile-menu-reopen {
+      display: none;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      background: #eb5d1e;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 22px;
+      z-index: 99999;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      align-items: center;
+      justify-content: center;
+    }
+    #mobile-menu-reopen:hover {
+      background: #c94e16;
+    }
+
+    /* Close button inside the mobile menu */
+    #mobile-menu-close {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      background: #eb5d1e;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    #mobile-menu-close:hover {
+      background: #c94e16;
+    }
+
     @media (max-width: 991.98px) {
-      /* Hide the hamburger menu icon since we want the menu always visible */
+      /* Hide the default hamburger icon */
       .mobile-nav-toggle {
         display: none !important;
       }
-      
+
+      /* Show the close button inside the menu */
+      #mobile-menu-close {
+        display: flex !important;
+      }
+
       /* Make the navigation menu fully visible, stacked, and scrollable on mobile */
       #navbar {
         position: fixed !important;
-        top: 60px !important; /* Adjust this value if your header logo is taller/shorter */
+        top: 60px !important;
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
@@ -49,21 +99,23 @@
         max-height: calc(100vh - 60px) !important;
         overflow-y: auto !important;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+        padding-top: 10px !important;
       }
-      
+
       #navbar > ul {
         display: block !important;
         position: relative !important;
         background: #ffffff !important;
+        padding-top: 30px !important; /* space for close button */
       }
-      
+
       #navbar > ul > li {
         display: block !important;
         width: 100% !important;
         text-align: center !important;
         border-bottom: 1px solid #f0f0f0 !important;
       }
-      
+
       /* Hide dropdowns by default on mobile */
       #navbar .dropdown > ul {
         display: none !important;
@@ -73,10 +125,29 @@
         opacity: 1 !important;
         visibility: visible !important;
       }
-      
+
       /* Show dropdown when the parent li has the 'dropdown-active' class */
       #navbar .dropdown.dropdown-active > ul {
         display: block !important;
+      }
+
+      /* When menu is hidden */
+      #navbar.navbar-hidden {
+        display: none !important;
+      }
+
+      /* Show the reopen button when menu is hidden */
+      #navbar.navbar-hidden ~ #mobile-menu-reopen,
+      body.menu-closed #mobile-menu-reopen {
+        display: flex !important;
+      }
+    }
+
+    /* On desktop, hide both buttons */
+    @media (min-width: 992px) {
+      #mobile-menu-close,
+      #mobile-menu-reopen {
+        display: none !important;
       }
     }
   </style>
@@ -101,6 +172,7 @@
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
+        <button id="mobile-menu-close" aria-label="Close menu">&times;</button>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
 
@@ -123,6 +195,9 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+
+      <!-- Reopen button - appears when menu is closed on mobile -->
+      <button id="mobile-menu-reopen" aria-label="Open menu"><i class="bi bi-list"></i></button>
 
       <div class="header-social-links d-flex">
         <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
@@ -622,18 +697,44 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Custom JS for mobile dropdown toggle -->
+  <!-- Custom JS for mobile dropdown toggle and close/reopen menu -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.getElementById('navbar');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const reopenBtn = document.getElementById('mobile-menu-reopen');
       const dropdownToggles = document.querySelectorAll('#navbar .dropdown > a');
+
+      // Dropdown expand/collapse on mobile
       dropdownToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
-          // Only prevent default and toggle on mobile view
           if (window.innerWidth < 992) {
             e.preventDefault();
             this.parentElement.classList.toggle('dropdown-active');
           }
         });
+      });
+
+      // Close button - hide the menu
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navbar.classList.add('navbar-hidden');
+        document.body.classList.add('menu-closed');
+      });
+
+      // Reopen button - show the menu again
+      reopenBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navbar.classList.remove('navbar-hidden');
+        document.body.classList.remove('menu-closed');
+      });
+
+      // If user resizes to desktop, reset state
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          navbar.classList.remove('navbar-hidden');
+          document.body.classList.remove('menu-closed');
+        }
       });
     });
   </script>
