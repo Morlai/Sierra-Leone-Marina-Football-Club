@@ -29,6 +29,41 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Custom CSS to make mobile menu visible -->
+  <style>
+    @media (max-width: 991.98px) {
+      #navbar {
+        display: block !important;
+      }
+      #navbar ul {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        z-index: 999;
+        padding: 10px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      #navbar ul li {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      #navbar .dropdown ul {
+        position: static !important;
+        display: block !important;
+        box-shadow: none !important;
+        background: #f9f9f9;
+      }
+      .mobile-nav-toggle {
+        display: block !important;
+      }
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: Company
   * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
@@ -51,12 +86,23 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
+
+          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="missionandvission.html">Mission and Vission</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="whoweare.html">Who We Are</a></li>
+              <li><a href="ourpartner.html">Our Partners</a></li>
+            </ul>
+          </li>
+
           <li><a href="whatwedo.html">What We Do</a></li>
           <li><a href="getinvolved.html">Get Involved</a></li>
           <li><a href="pricing.html">Donate</a></li>
           <li><a href="blog.html">Review</a></li>
           <li><a href="contact.html">Contact Us</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
