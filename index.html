@@ -29,7 +29,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Custom CSS to force mobile menu to be fully visible -->
+  <!-- Custom CSS to force mobile menu to be fully visible and handle dropdowns -->
   <style>
     @media (max-width: 991.98px) {
       /* Hide the hamburger menu icon since we want the menu always visible */
@@ -64,14 +64,19 @@
         border-bottom: 1px solid #f0f0f0 !important;
       }
       
-      /* Ensure dropdowns under "About" are also visible and stacked */
+      /* Hide dropdowns by default on mobile */
       #navbar .dropdown > ul {
-        display: block !important;
+        display: none !important;
         position: relative !important;
         background: #f8f9fa !important;
         box-shadow: none !important;
         opacity: 1 !important;
         visibility: visible !important;
+      }
+      
+      /* Show dropdown when the parent li has the 'dropdown-active' class */
+      #navbar .dropdown.dropdown-active > ul {
+        display: block !important;
       }
     }
   </style>
@@ -616,6 +621,22 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for mobile dropdown toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggles = document.querySelectorAll('#navbar .dropdown > a');
+      dropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          // Only prevent default and toggle on mobile view
+          if (window.innerWidth < 992) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('dropdown-active');
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 
