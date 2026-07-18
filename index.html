@@ -29,37 +29,49 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Custom CSS to make mobile menu visible -->
+  <!-- Custom CSS to force mobile menu to be fully visible -->
   <style>
     @media (max-width: 991.98px) {
-      #navbar {
-        display: block !important;
-      }
-      #navbar ul {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: #fff;
-        z-index: 999;
-        padding: 10px 0;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      }
-      #navbar ul li {
-        display: block;
-        width: 100%;
-        text-align: center;
-      }
-      #navbar .dropdown ul {
-        position: static !important;
-        display: block !important;
-        box-shadow: none !important;
-        background: #f9f9f9;
-      }
+      /* Hide the hamburger menu icon since we want the menu always visible */
       .mobile-nav-toggle {
+        display: none !important;
+      }
+      
+      /* Make the navigation menu fully visible, stacked, and scrollable on mobile */
+      #navbar {
+        position: fixed !important;
+        top: 60px !important; /* Adjust this value if your header logo is taller/shorter */
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        z-index: 9999 !important;
+        max-height: calc(100vh - 60px) !important;
+        overflow-y: auto !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+      }
+      
+      #navbar > ul {
         display: block !important;
+        position: relative !important;
+        background: #ffffff !important;
+      }
+      
+      #navbar > ul > li {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+      }
+      
+      /* Ensure dropdowns under "About" are also visible and stacked */
+      #navbar .dropdown > ul {
+        display: block !important;
+        position: relative !important;
+        background: #f8f9fa !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
       }
     }
   </style>
