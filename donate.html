@@ -1,1 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Donate - SL Marina Football Club</title>
+  <meta content="Support SL Marina Football Club. Help transform the lives of children in Freetown's slums through football, education, and mentorship." name="description">
+  <meta content="donate, football, freetown, sierra leone, youth, charity, sl mariners, support children" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Custom CSS for Donate Page -->
+  <style>
+    /* Mobile Menu Styles (Preserved from other pages) */
+    #mobile-menu-reopen {
+      display: none;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      background: #eb5d1e;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 22px;
+      z-index: 99999;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      align-items: center;
+      justify-content: center;
+    }
+    #mobile-menu-reopen:hover { background: #c94e16; }
+
+    #mobile-menu-close {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      background: #eb5d1e;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    #mobile-menu-close:hover { background: #c94e16; }
+
+    @media (max-width: 991.98px) {
+      .mobile-nav-toggle { display: none !important; }
+      #mobile-menu-close { display: flex !important; }
+      #navbar {
+        position: fixed !important;
+        top: 60px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        z-index: 9999 !important;
+        max-height: calc(100vh - 60px) !important;
+        overflow-y: auto !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+        padding-top: 10px !important;
+      }
+      #navbar > ul {
+        display: block !important;
+        position: relative !important;
+        background: #ffffff !important;
+        padding-top: 30px !important;
+      }
+      #navbar > ul > li {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+      }
+      #navbar .dropdown > ul {
+        display: none !important;
+        position: relative !important;
+        background: #f8f9fa !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      #navbar .dropdown.dropdown-active > ul { display: block !important; }
+      #navbar.navbar-hidden { display: none !important; }
+      #navbar.navbar-hidden ~ #mobile-menu-reopen,
+      body.menu-closed #mobile-menu-reopen { display: flex !important; }
+    }
+    @media (min-width: 992px) {
+      #mobile-menu-close, #mobile-menu-reopen { display: none !important; }
+    }
+
+    /* Donate Page Specific Styles */
+    .donate-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/img/slide/slide-1.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 80px 0 60px;
+      text-align: center;
+      margin-top: 70px;
+    }
+    .donate-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .donate-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .impact-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      height: 100%;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .impact-card:hover { transform: translateY(-5px); }
+    .impact-card .icon {
+      font-size: 3rem;
+      color: #eb5d1e;
+      margin-bottom: 15px;
+    }
+    .impact-card h4 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .donation-tier {
+      background: #fff;
+      border-radius: 15px;
+      padding: 35px 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      height: 100%;
+      position: relative;
+    }
+    .donation-tier:hover {
+      border-color: #eb5d1e;
+      transform: translateY(-5px);
+    }
+    .donation-tier.featured {
+      border-color: #eb5d1e;
+      background: linear-gradient(135deg, #fff 0%, #fff5f0 100%);
+    }
+    .donation-tier.featured::before {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #eb5d1e;
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .donation-tier .amount {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #eb5d1e;
+      margin: 15px 0;
+    }
+    .donation-tier .amount small {
+      font-size: 1rem;
+      color: #666;
+    }
+    .donation-tier ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .donation-tier ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .donation-tier ul li:last-child { border-bottom: none; }
+    .donation-tier ul li i {
+      color: #28a745;
+      margin-right: 8px;
+    }
+
+    .payment-method {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+      border-left: 4px solid #eb5d1e;
+    }
+    .payment-method h5 {
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .payment-method h5 i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      color: #eb5d1e;
+    }
+    .payment-method .details {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+
+    .donate-form {
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    .donate-form .form-control {
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+    .donate-form .form-control:focus {
+      border-color: #eb5d1e;
+      box-shadow: 0 0 0 0.2rem rgba(235, 93, 30, 0.25);
+    }
+    .amount-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border: 2px solid #eb5d1e;
+      border-radius: 8px;
+      background: #fff;
+      color: #eb5d1e;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .amount-btn:hover, .amount-btn.active {
+      background: #eb5d1e;
+      color: #fff;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px 25px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .faq-item h6 {
+      font-weight: 700;
+      color: #eb5d1e;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      margin: 0;
+      color: #555;
+    }
+
+    .section-title-custom {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title-custom h2 {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .section-title-custom p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: Company
+  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt="SL Mariners FC"></a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <button id="mobile-menu-close" aria-label="Close menu">&times;</button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="missionandvission.html">Mission and Vision</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="whoweare.html">Who We Are</a></li>
+              <li><a href="ourpartner.html">Our Partners</a></li>
+            </ul>
+          </li>
+
+          <li><a href="whatwedo.html">What We Do</a></li>
+          <li><a href="getinvolved.html">Get Involved</a></li>
+          <li><a href="donate.html" class="active">Donate</a></li>
+          <li><a href="blog.html">Review</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <button id="mobile-menu-reopen" aria-label="Open menu"><i class="bi bi-list"></i></button>
+
+      <div class="header-social-links d-flex">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Donate Hero Section ======= -->
+  <section class="donate-hero">
+    <div class="container" data-aos="fade-up">
+      <h1>Change a Life Through Football</h1>
+      <p>Your donation doesn't just buy a football — it gives a child in Freetown's slums a chance at education, hope, and a future. Every Leone counts. Every dollar matters.</p>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- ======= Where Your Donation Goes ======= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title-custom" data-aos="fade-up">
+          <h2>Where Your Donation Goes</h2>
+          <p>We believe in transparency. Here's exactly how your contribution transforms lives in our community.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="impact-card">
+              <div class="icon"><i class="bi bi-people-fill"></i></div>
+              <h4>40%</h4>
+              <p>Youth Academy Training & Coaching</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="impact-card">
+              <div class="icon"><i class="bi bi-book-fill"></i></div>
+              <h4>25%</h4>
+              <p>Education & Literacy Programs</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="impact-card">
+              <div class="icon"><i class="bi bi-heart-pulse-fill"></i></div>
+              <h4>20%</h4>
+              <p>Nutrition & Health Support</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="impact-card">
+              <div class="icon"><i class="bi bi-tools"></i></div>
+              <h4>15%</h4>
+              <p>Facilities & Equipment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Donation Tiers ======= -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title-custom" data-aos="fade-up">
+          <h2>Choose Your Impact Level</h2>
+          <p>Every donation, no matter the size, creates a ripple of change. Select a tier that speaks to your heart.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="donation-tier">
+              <h4>Friend</h4>
+              <div class="amount">$10 <small>/ one-time</small></div>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> 1 Football for a child</li>
+                <li><i class="bi bi-check-circle-fill"></i> 1 week of training</li>
+                <li><i class="bi bi-check-circle-fill"></i> Thank you certificate</li>
+              </ul>
+              <a href="#donate-form" class="btn btn-outline-danger w-100">Donate $10</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="donation-tier">
+              <h4>Supporter</h4>
+              <div class="amount">$25 <small>/ one-time</small></div>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Full training kit</li>
+                <li><i class="bi bi-check-circle-fill"></i> 1 month of coaching</li>
+                <li><i class="bi bi-check-circle-fill"></i> Name on donor wall</li>
+              </ul>
+              <a href="#donate-form" class="btn btn-outline-danger w-100">Donate $25</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="donation-tier featured">
+              <h4>Champion</h4>
+              <div class="amount">$50 <small>/ one-time</small></div>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Full season sponsorship</li>
+                <li><i class="bi bi-check-circle-fill"></i> Education support</li>
+                <li><i class="bi bi-check-circle-fill"></i> Monthly progress report</li>
+                <li><i class="bi bi-check-circle-fill"></i> Exclusive club updates</li>
+              </ul>
+              <a href="#donate-form" class="btn btn-danger w-100">Donate $50</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="donation-tier">
+              <h4>Legend</h4>
+              <div class="amount">$100+ <small>/ one-time</small></div>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Sponsor a full child</li>
+                <li><i class="bi bi-check-circle-fill"></i> VIP match day invite</li>
+                <li><i class="bi bi-check-circle-fill"></i> Personal story updates</li>
+                <li><i class="bi bi-check-circle-fill"></i> Lifetime supporter badge</li>
+              </ul>
+              <a href="#donate-form" class="btn btn-outline-danger w-100">Donate $100+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Donation Methods ======= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title-custom" data-aos="fade-up">
+          <h2>How to Donate</h2>
+          <p>We've made it easy to support our cause. Choose the method that works best for you.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="payment-method">
+              <h5><i class="bi bi-phone-fill"></i> Orange Money (Sierra Leone)</h5>
+              <p>Send your donation directly via Orange Money:</p>
+              <div class="details">
+                <strong>Account Name:</strong> SL Mariners FC<br>
+                <strong>Phone Number:</strong> +232 76 391 399<br>
+                <strong>Reference:</strong> Your Name + "DONATION"
+              </div>
+            </div>
+
+            <div class="payment-method">
+              <h5><i class="bi bi-phone-fill"></i> Africell Money (Sierra Leone)</h5>
+              <p>For Africell users, send to:</p>
+              <div class="details">
+                <strong>Account Name:</strong> SL Mariners FC<br>
+                <strong>Phone Number:</strong> +232 76 391 399<br>
+                <strong>Reference:</strong> Your Name + "DONATION"
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="payment-method">
+              <h5><i class="bi bi-bank"></i> Bank Transfer (International)</h5>
+              <p>For international donors and larger contributions:</p>
+              <div class="details">
+                <strong>Bank:</strong> [Bank Name]<br>
+                <strong>Account Name:</strong> SL Marina Football Club<br>
+                <strong>Account Number:</strong> [Account Number]<br>
+                <strong>SWIFT Code:</strong> [SWIFT Code]<br>
+                <strong>Branch:</strong> Freetown, Sierra Leone
+              </div>
+            </div>
+
+            <div class="payment-method">
+              <h5><i class="bi bi-paypal"></i> PayPal / Online</h5>
+              <p>Donate securely online via PayPal:</p>
+              <div class="details">
+                <strong>PayPal Email:</strong> slmarinersfc@gmail.com<br>
+                <strong>Or scan our QR code</strong> (available on request)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Donation Form ======= -->
+    <section id="donate-form" class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title-custom" data-aos="fade-up">
+          <h2>Make Your Donation</h2>
+          <p>Fill out the form below and our team will contact you to complete your donation. Every contribution makes a difference.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="donate-form">
+              <h4 class="mb-4">Donation Details</h4>
+
+              <form action="assets/vendor/php-email-form/validate.js" method="post" role="form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name *" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address *" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
+                  </div>
+                  <div class="col-md-6">
+                    <select name="country" class="form-control">
+                      <option value="">Select Country</option>
+                      <option value="SL">Sierra Leone</option>
+                      <option value="US">United States</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="NG">Nigeria</option>
+                      <option value="GH">Ghana</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label"><strong>Select Donation Amount (USD):</strong></label>
+                  <div class="text-center">
+                    <button type="button" class="amount-btn" data-amount="10">$10</button>
+                    <button type="button" class="amount-btn" data-amount="25">$25</button>
+                    <button type="button" class="amount-btn active" data-amount="50">$50</button>
+                    <button type="button" class="amount-btn" data-amount="100">$100</button>
+                    <button type="button" class="amount-btn" data-amount="250">$250</button>
+                    <button type="button" class="amount-btn" data-amount="custom">Custom</button>
+                  </div>
+                  <input type="number" name="amount" id="donation-amount" class="form-control mt-3" placeholder="Enter amount" value="50" required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label"><strong>Preferred Payment Method:</strong></label>
+                  <select name="payment_method" class="form-control" required>
+                    <option value="">-- Select Method --</option>
+                    <option value="orange-money">Orange Money</option>
+                    <option value="africell-money">Africell Money</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                    <option value="paypal">PayPal</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label"><strong>Is this a recurring donation?</strong></label>
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="frequency" id="one-time" value="one-time" checked>
+                      <label class="form-check-label" for="one-time">One-time</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="frequency" id="monthly" value="monthly">
+                      <label class="form-check-label" for="monthly">Monthly</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <textarea name="message" class="form-control" rows="4" placeholder="Leave a message of support (optional)"></textarea>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-danger btn-lg px-5 py-3">Submit Donation Request</button>
+                </div>
+
+                <p class="text-center text-muted mt-3 small">
+                  <i class="bi bi-shield-check"></i> Your information is secure and will never be shared with third parties.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Impact Stories ======= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-title-custom" data-aos="fade-up">
+          <h2>Stories of Change</h2>
+          <p>Real children. Real transformations. Real hope. See how your donations have already changed lives.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="impact-card text-start">
+              <div class="icon text-start"><i class="bi bi-quote"></i></div>
+              <p class="fst-italic">"Before joining the academy, I had no hope. Now I dream of playing for the national team. Football gave me a future."</p>
+              <h5 class="mt-3 mb-0">Ibrahim K., Age 12</h5>
+              <small class="text-muted">Kroo Bay Youth Academy</small>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="impact-card text-start">
+              <div class="icon text-start"><i class="bi bi-quote"></i></div>
+              <p class="fst-italic">"My daughter can now read and write thanks to the education program. The football keeps her off the streets. Thank you!"</p>
+              <h5 class="mt-3 mb-0">Fatmata S., Parent</h5>
+              <small class="text-muted">Freetown Community</small>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="impact-card text-start">
+              <div class="icon text-start"><i class="bi bi-quote"></i></div>
+              <p class="fst-italic">"I was heading down the wrong path. The coaches became like fathers to me. Now I'm a team captain and a role model."</p>
+              <h5 class="mt-3 mb-0">Mohamed T., Age 16</h5>
+              <small class="text-muted">Senior Academy Player</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= FAQ Section ======= -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="section-title-custom" data-aos="fade-up">
+          <h2>Frequently Asked Questions</h2>
+          <p>Got questions about donating? We've got answers.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="faq-item" data-aos="fade-up">
+              <h6><i class="bi bi-question-circle-fill"></i> Is my donation tax-deductible?</h6>
+              <p>SL Marina Football Club is a registered community organization. Donations may be tax-deductible depending on your country's laws. Please consult your tax advisor for specific guidance.</p>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+              <h6><i class="bi bi-question-circle-fill"></i> How will I know my donation was received?</h6>
+              <p>You will receive an email confirmation within 24 hours of your donation. For mobile money transfers, please keep your transaction receipt and our team will verify it promptly.</p>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+              <h6><i class="bi bi-question-circle-fill"></i> Can I choose which child to sponsor?</h6>
+              <p>While we cannot assign specific children, Champion ($50) and Legend ($100+) donors receive monthly updates about the children their donations are helping, including names, photos, and progress reports.</p>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+              <h6><i class="bi bi-question-circle-fill"></i> Is there a minimum donation amount?</h6>
+              <p>No! Every contribution matters. Even $1 can help buy a meal for a child after training. We appreciate donations of any size.</p>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+              <h6><i class="bi bi-question-circle-fill"></i> Can I volunteer instead of donating money?</h6>
+              <p>Absolutely! We welcome volunteers — coaches, teachers, mentors, and helpers. Visit our <a href="getinvolved.html">Get Involved</a> page to learn more about volunteering opportunities.</p>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+              <h6><i class="bi bi-question-circle-fill"></i> How can I donate from outside Sierra Leone?</h6>
+              <p>International donors can use PayPal, bank transfer, or contact us directly at slmarinersfc@gmail.com for alternative arrangements. We accept USD, GBP, and EUR.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Final CTA ======= -->
+    <section class="py-5" style="background: linear-gradient(rgba(235, 93, 30, 0.9), rgba(235, 93, 30, 0.9)), url('assets/img/slide/slide-2.jpg') center/cover no-repeat; color: #fff;">
+      <div class="container text-center" data-aos="fade-up">
+        <h2 class="mb-3">Every Child Deserves a Chance to Dream</h2>
+        <p class="mb-4" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">
+          Join hundreds of supporters who are already changing lives through football. Your donation today writes a new story for a child in Freetown tomorrow.
+        </p>
+        <a href="#donate-form" class="btn btn-light btn-lg px-5 py-3 me-3">Donate Now</a>
+        <a href="getinvolved.html" class="btn btn-outline-light btn-lg px-5 py-3">Get Involved</a>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>SL Mariners FC</h3>
+            <p>
+              2 <sup>A</sup> Fisher Street, Off Sani Abacha <br>
+              Freetown<br>
+              Sierra Leone <br><br>
+              <strong>Phone:</strong> +232 76391399<br>
+              <strong>Email:</strong> slmarinersfc@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Menu</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about.html">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="whatwedo.html">What We Do</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Review</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>What We Do</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Gallery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate Now</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Pictures</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Stay updated with match schedules, academy news, and community events. Join the Mariners family today!</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
+        </div>
+      </div>
+
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for mobile menu and donation form -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu functionality (preserved from other pages)
+      const navbar = document.getElementById('navbar');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const reopenBtn = document.getElementById('mobile-menu-reopen');
+      const dropdownToggles = document.querySelectorAll('#navbar .dropdown > a');
+
+      dropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth < 992) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('dropdown-active');
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navbar.classList.add('navbar-hidden');
+        document.body.classList.add('menu-closed');
+      });
+
+      reopenBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navbar.classList.remove('navbar-hidden');
+        document.body.classList.remove('menu-closed');
+      });
+
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          navbar.classList.remove('navbar-hidden');
+          document.body.classList.remove('menu-closed');
+        }
+      });
+
+      // Donation amount buttons
+      const amountBtns = document.querySelectorAll('.amount-btn');
+      const amountInput = document.getElementById('donation-amount');
+
+      amountBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          amountBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          const amount = this.getAttribute('data-amount');
+          if (amount === 'custom') {
+            amountInput.value = '';
+            amountInput.focus();
+          } else {
+            amountInput.value = amount;
+          }
+        });
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
