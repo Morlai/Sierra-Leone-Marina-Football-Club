@@ -29,6 +29,66 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Custom CSS for Ibrahim Card -->
+  <style>
+    .ibrahim-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin: 40px 0;
+    }
+    .ibrahim-card .row {
+      margin: 0;
+    }
+    .ibrahim-card .col-md-5 {
+      padding: 0;
+    }
+    .ibrahim-card .col-md-7 {
+      padding: 40px;
+    }
+    .ibrahim-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 400px;
+    }
+    .ibrahim-quote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .ibrahim-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .ibrahim-age {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+    }
+    .ibrahim-icon {
+      font-size: 3rem;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .ibrahim-card .col-md-5,
+      .ibrahim-card .col-md-7 {
+        padding: 0;
+      }
+      .ibrahim-card .col-md-7 {
+        padding: 30px 20px;
+      }
+      .ibrahim-img {
+        min-height: 250px;
+      }
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: Company
   * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
@@ -170,12 +230,50 @@
               <p>
                 <strong>Your donation changes narratives.</strong> It transforms a child who wades through slum waters into a young athlete with goals, discipline, and hope. It turns a desperate environment into a training ground for champions - both on and off the pitch.
               </p>
-              <p class="fst-italic">
-                "In the slum, I saw only darkness. But football showed me I can score goals in life too." - Ibrahim, Age 12, Kroo Bay Youth Academy
-              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ibrahim's Story Card -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="ibrahim-card" data-aos="fade-up">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <img src="assets/img/portfolio/ibrahim.jpg" alt="Ibrahim - Kroo Bay Youth Academy" class="ibrahim-img">
+                </div>
+                <div class="col-md-7">
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <i class="bi bi-quote ibrahim-icon"></i>
+                  </div>
+                  <p class="ibrahim-quote">
+                    "In the slum, I saw only darkness. But football showed me I can score goals in life too."
+                  </p>
+                  <h3 class="ibrahim-name">Ibrahim Kamara</h3>
+                  <p class="ibrahim-age">Age 12, Kroo Bay Youth Academy</p>
+                  <p class="text-white mt-4">
+                    Ibrahim joins our academy every day after school. Despite walking through flooded streets daily, his determination never fades. He dreams of becoming a professional footballer and helping his family escape poverty. Through our program, Ibrahim has improved his reading skills, learned teamwork, and discovered his potential.
+                  </p>
+                  <p class="text-white mb-0">
+                    <strong>Your support keeps Ibrahim's dream alive.</strong> Every donation helps provide training equipment, educational materials, and nutritious meals for children like Ibrahim who refuse to let their circumstances define their future.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Final Call to Action -->
+        <div class="row mt-5 mb-5">
+          <div class="col-12 text-center">
+            <div class="portfolio-description-full">
+              <h2>Join us in rewriting stories.</h2>
               <p>
-                <strong>Join us in rewriting stories.</strong> Every child in Kroo Bay deserves more than survival - they deserve a chance to thrive. Through football, we're not just building players; we're building leaders, dreamers, and change-makers who will transform Sierra Leone's future.
+                Every child in Kroo Bay deserves more than survival - they deserve a chance to thrive. Through football, we're not just building players; we're building leaders, dreamers, and change-makers who will transform Sierra Leone's future.
               </p>
+              <div class="text-center mt-4">
+                <a href="donate.html" class="btn-get-started">Support Ibrahim and 200+ Children Today</a>
+              </div>
             </div>
           </div>
         </div>
