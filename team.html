@@ -29,98 +29,207 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Custom Professional Enhancements for Team Page -->
+  <!-- Creative Professional Enhancements for Team Page -->
   <style>
+    /* Section Background Pattern */
+    .team.section-bg {
+      background-color: #f8f9fa;
+      background-image: radial-gradient(#eb5d1e 0.5px, transparent 0.5px), radial-gradient(#1e3c72 0.5px, #f8f9fa 0.5px);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      background-attachment: fixed;
+    }
+
     .team .member {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(0,0,0,0.03);
-      height: 100%;
+      position: relative;
+      margin-bottom: 30px;
     }
-    .team .member:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(235, 93, 30, 0.15);
-    }
+
+    /* Creative Image Container with Dynamic Shape */
     .team .member-img {
       position: relative;
+      border-radius: 16px;
       overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      transition: all 0.4s ease;
     }
+    
+    .team .member-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(30, 60, 114, 0.85) 0%, rgba(30, 60, 114, 0.2) 50%, transparent 100%);
+      opacity: 0.7;
+      transition: opacity 0.4s ease;
+    }
+    
+    .team .member:hover .member-img::after {
+      opacity: 0.9;
+    }
+
     .team .member-img img {
       width: 100%;
-      transition: transform 0.6s ease;
+      height: 380px;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+    
     .team .member:hover .member-img img {
       transform: scale(1.08);
     }
+
+    /* Subtle Club Crest Watermark */
+    .team .member::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: url('assets/img/SL Mariners FC logo.png') center/contain no-repeat;
+      opacity: 0.05;
+      z-index: 2;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    
+    .team .member:hover::before {
+      opacity: 0.15;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Floating Social Icons */
     .team .member-img .social {
       position: absolute;
-      bottom: -60px;
-      left: 0;
-      right: 0;
-      background: rgba(30, 60, 114, 0.9); /* Club Dark Blue */
-      padding: 12px 0;
-      transition: bottom 0.4s ease;
+      top: 20px;
+      right: 20px;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 3;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+    
     .team .member:hover .member-img .social {
-      bottom: 0;
+      opacity: 1;
+      transform: translateX(0);
     }
+    
     .team .member-img .social a {
-      color: #fff;
-      font-size: 18px;
-      transition: all 0.3s;
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #1e3c72;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
+      font-size: 18px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
+    
     .team .member-img .social a:hover {
-      background: #eb5d1e; /* Club Orange */
+      background: #eb5d1e;
       color: #fff;
-      transform: scale(1.1);
+      transform: scale(1.15) rotate(5deg);
     }
+
+    /* Overlapping Info Card */
     .team .member-info {
-      padding: 25px 20px;
-      text-align: center;
       background: #fff;
+      margin: -60px 20px 0; /* Creates the overlapping effect */
+      padding: 30px 20px 35px;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s ease;
+      border-top: 4px solid #eb5d1e;
     }
+    
+    .team .member:hover .member-info {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(235, 93, 30, 0.2);
+    }
+
     .team .member-info h4 {
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       margin-bottom: 8px;
-      color: #1e3c72; /* Club Dark Blue */
+      color: #1e3c72;
       font-family: 'Poppins', sans-serif;
+      transition: color 0.3s ease;
     }
+    
+    .team .member:hover .member-info h4 {
+      color: #eb5d1e;
+    }
+
     .team .member-info span {
       display: inline-block;
-      font-size: 0.85rem;
-      color: #eb5d1e; /* Club Orange */
+      font-size: 0.8rem;
+      color: #666;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      background: rgba(235, 93, 30, 0.08);
-      padding: 5px 15px;
+      background: rgba(30, 60, 114, 0.08);
+      padding: 6px 16px;
       border-radius: 20px;
+      transition: all 0.3s ease;
     }
     
+    .team .member:hover .member-info span {
+      background: #1e3c72;
+      color: #fff;
+    }
+
     /* Section Title Enhancement */
     .section-title h2 {
       font-family: 'Poppins', sans-serif;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .section-title h2 strong {
+      color: #eb5d1e;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title h2 strong::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: rgba(235, 93, 30, 0.2);
+      z-index: -1;
+      border-radius: 4px;
     }
     .section-title p {
       max-width: 700px;
       margin: 0 auto;
-      color: #666;
-      line-height: 1.7;
+      color: #555;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    /* Mobile Responsiveness for Overlap */
+    @media (max-width: 768px) {
+      .team .member-info {
+        margin: -40px 15px 0;
+        padding: 25px 15px 30px;
+      }
+      .team .member-img img {
+        height: 320px;
+      }
     }
   </style>
 
@@ -140,8 +249,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt="SL Mariners FC"></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
-      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
