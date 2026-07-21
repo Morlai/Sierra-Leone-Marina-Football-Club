@@ -153,6 +153,29 @@
       margin: 0 auto;
       font-weight: 300;
     }
+
+    /* Image Banner Styling */
+    .image-banner {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .image-banner img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    .image-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+    }
   </style>
 
   <!-- =======================================================
@@ -221,6 +244,11 @@
         </div>
       </div>
     </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Image Banner ======= -->
+    <section class="image-banner">
+      <img src="assets/img/slide/slide-2.jpg" alt="SL Mariners FC Mission Banner" data-aos="fade-in">
+    </section><!-- End Image Banner -->
 
     <!-- ======= Mission & Vision Cards ======= -->
     <section class="py-5">
