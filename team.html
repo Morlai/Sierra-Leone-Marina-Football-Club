@@ -101,23 +101,23 @@
       transform: translate(-50%, -50%) scale(1.1);
     }
 
-    /* Floating Social Icons */
+    /* Arranged Social Icons on Hover */
     .team .member-img .social {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
       display: flex;
-      flex-direction: column;
+      flex-direction: row; /* Arranged horizontally */
       gap: 12px;
       z-index: 3;
       opacity: 0;
-      transform: translateX(30px);
       transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     
     .team .member:hover .member-img .social {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateX(-50%) translateY(0); /* Slides up to center bottom */
     }
     
     .team .member-img .social a {
