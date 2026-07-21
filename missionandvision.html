@@ -29,6 +29,132 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Custom Design Enhancements for Mission & Vision Page -->
+  <style>
+    /* Page Header with Background */
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/img/slide/slide-1.jpg') center center/cover no-repeat;
+      padding: 120px 0 80px;
+      color: #fff;
+      text-align: center;
+    }
+    .page-header h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .page-header ol {
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-flex;
+    }
+    .page-header ol a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .page-header ol li + li::before {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Mission & Vision Cards */
+    .mv-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 5px solid #eb5d1e;
+      text-align: center;
+    }
+    .mv-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(235, 93, 30, 0.15);
+    }
+    .mv-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(235, 93, 30, 0.1);
+      color: #eb5d1e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 25px;
+    }
+    .mv-card h3 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .mv-card p {
+      color: #666;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    /* Core Values Grid */
+    .value-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .value-box:hover {
+      background: #eb5d1e;
+      color: #fff;
+      transform: translateY(-5px);
+    }
+    .value-box:hover h4, .value-box:hover p, .value-box:hover i {
+      color: #fff;
+    }
+    .value-box i {
+      font-size: 2.5rem;
+      color: #eb5d1e;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+    }
+    .value-box h4 {
+      font-weight: 700;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+    .value-box p {
+      font-size: 0.95rem;
+      color: #666;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    /* Stand For Section */
+    .stand-for-section {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .stand-for-section .quote-icon {
+      font-size: 4rem;
+      color: rgba(255, 255, 255, 0.2);
+      margin-bottom: 20px;
+    }
+    .stand-for-section blockquote {
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: Company
   * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
@@ -45,8 +171,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt="SL Mariners FC"></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
-      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -85,88 +209,108 @@
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Mission & Vision</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Mission & Vision</li>
-          </ol>
-        </div>
+    <!-- ======= Page Header ======= -->
+    <section class="page-header">
+      <div class="container" data-aos="fade-up">
+        <h2>Mission & Vision</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Mission & Vision</li>
+        </ol>
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section><!-- End Page Header -->
 
-    <!-- ======= Mission Intro Section ======= -->
+    <!-- ======= Mission & Vision Cards ======= -->
     <section class="py-5">
-      <div class="container text-center" data-aos="fade-up">
-        <h2 class="mb-4">The Heart of SL Marina FC</h2>
-        <p class="lead mx-auto text-muted" style="max-width: 800px;">
-          At SL Marina Football Club, we are driven by more than just the love of the game. We are fueled by a deep commitment to our community, our players, and the future of Sierra Leone. Our foundation is built on clear principles that guide every decision we make, every training session we lead, and every life we touch.
-        </p>
-      </div>
-    </section>
-
-    <!-- ======= Mission & Vision Section ======= -->
-    <section id="testimonials" class="testimonials section-bg py-5">
       <div class="container">
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-3.png" class="testimonial-img" alt="Our Mission">
+        <div class="row g-4">
+          
+          <!-- Mission -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="mv-card">
+              <div class="mv-icon">
+                <i class="bi bi-bullseye"></i>
+              </div>
               <h3>Our Mission</h3>
               <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 To empower the youth of Freetown through the transformative power of football. We provide a safe, structured environment that fosters athletic excellence, academic support, and character development, ultimately lifting our players and their communities toward a brighter, self-sufficient future.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-item mt-4 mt-lg-0">
-              <img src="assets/img/testimonials/testimonials-2.png" class="testimonial-img" alt="Our Vision">
+          <!-- Vision -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="mv-card">
+              <div class="mv-icon">
+                <i class="bi bi-eye"></i>
+              </div>
               <h3>Our Vision</h3>
               <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 To be the premier football academy and community organization in Sierra Leone. We envision a future where every child, regardless of their background, has access to world-class coaching, education, and a clear pathway to professional football, using the sport as a catalyst for national pride and social change.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-1.png" class="testimonial-img" alt="Our Values">
-              <h3>Our Core Values</h3>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                <strong>Excellence:</strong> Striving for the highest standards on and off the pitch.<br>
-                <strong>Integrity:</strong> Playing fair and leading with honesty.<br>
-                <strong>Community:</strong> Uplifting each other and the neighborhoods we serve.<br>
-                <strong>Resilience:</strong> Overcoming life's challenges with determination and grace.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="What We Stand For">
-              <h3>What We Stand For</h3>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                We stand for the inherent potential of every child in Sierra Leone. We believe football is more than a game; it is a vital tool for education, health awareness, and social mobility. We stand against poverty and inequality, offering a beacon of hope and a structured path to success.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-          
         </div>
       </div>
-    </section><!-- End Mission & Vision Section -->
+    </section><!-- End Mission & Vision Cards -->
+
+    <!-- ======= Core Values Section ======= -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 style="font-weight: 700;">Our Core Values</h2>
+          <p class="text-muted" style="max-width: 600px; margin: 0 auto;">The foundational principles that guide every decision we make and every life we touch.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="value-box">
+              <i class="bi bi-trophy"></i>
+              <h4>Excellence</h4>
+              <p>Striving for the highest standards in training, education, and personal conduct on and off the pitch.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="value-box">
+              <i class="bi bi-shield-check"></i>
+              <h4>Integrity</h4>
+              <p>Playing fair, leading with honesty, and building trust within our team and the wider community.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="value-box">
+              <i class="bi bi-people"></i>
+              <h4>Community</h4>
+              <p>Uplifting each other, respecting our roots, and giving back to the neighborhoods that raised us.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="value-box">
+              <i class="bi bi-lightning-charge"></i>
+              <h4>Resilience</h4>
+              <p>Overcoming life's challenges with determination, grace, and an unbreakable fighting spirit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Core Values Section -->
+
+    <!-- ======= What We Stand For Section ======= -->
+    <section class="stand-for-section">
+      <div class="container" data-aos="zoom-in">
+        <i class="bi bi-quote quote-icon"></i>
+        <blockquote>
+          "We stand for the inherent potential of every child in Sierra Leone. We believe football is more than a game; it is a vital tool for education, health awareness, and social mobility. We stand against poverty and inequality, offering a beacon of hope and a structured path to success."
+        </blockquote>
+        <div class="mt-4">
+          <a href="getinvolved.html" class="btn btn-light btn-lg px-4 py-2 fw-bold" style="color: #1e3c72;">Join Our Movement</a>
+        </div>
+      </div>
+    </section><!-- End What We Stand For Section -->
 
   </main><!-- End #main -->
 
