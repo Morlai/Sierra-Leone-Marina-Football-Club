@@ -1,1 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SL Marina Football Club - Who We Are</title>
+  <meta content="Discover the story, history, and core values of SL Marina Football Club in Freetown, Sierra Leone." name="description">
+  <meta content="who we are, history, values, football, freetown, sierra leone, sl mariners" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Creative Enhancements for Who We Are Page -->
+  <style>
+    /* Custom Brand Colors */
+    :root {
+      --club-blue: #1e3c72;
+      --club-orange: #eb5d1e;
+      --club-light: #f8f9fa;
+    }
+
+    /* Hero Intro Section */
+    .who-we-are-hero {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .who-we-are-hero::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 300px;
+      height: 300px;
+      background: var(--club-orange);
+      opacity: 0.05;
+      border-radius: 50%;
+    }
+    .hero-img-wrapper {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .hero-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .hero-img-wrapper:hover img {
+      transform: scale(1.05);
+    }
+    .hero-text h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--club-blue);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero-text h2 span {
+      color: var(--club-orange);
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* Core Pillars Section */
+    .pillars-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .pillar-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-bottom: 4px solid transparent;
+      height: 100%;
+    }
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(235, 93, 30, 0.15);
+      border-bottom: 4px solid var(--club-orange);
+    }
+    .pillar-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(235, 93, 30, 0.1);
+      color: var(--club-orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 25px;
+      transition: all 0.4s ease;
+    }
+    .pillar-card:hover .pillar-icon {
+      background: var(--club-orange);
+      color: #fff;
+      transform: rotateY(180deg);
+    }
+    .pillar-card h4 {
+      font-weight: 700;
+      color: var(--club-blue);
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .pillar-card p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Impact Stats Section */
+    .stats-section {
+      background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(30, 60, 114, 0.9)), url('assets/img/slide/slide-1.jpg') center/cover fixed;
+      padding: 80px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--club-orange);
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .stat-item p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    /* Journey / Timeline Section */
+    .journey-section {
+      padding: 80px 0;
+      background: var(--club-light);
+    }
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--club-orange);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      width: 50%;
+      padding: 0 40px;
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 4px solid var(--club-orange);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-item:nth-child(odd)::before {
+      right: -10px;
+    }
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
+    }
+    .timeline-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .timeline-content:hover {
+      transform: scale(1.03);
+    }
+    .timeline-year {
+      display: inline-block;
+      background: var(--club-blue);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .timeline-content h4 {
+      color: var(--club-blue);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .timeline-content p {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before { left: 20px; }
+      .timeline-item { width: 100%; left: 0 !important; padding-left: 60px; padding-right: 20px; text-align: left !important; }
+      .timeline-item::before { left: 10px !important; right: auto !important; }
+      .hero-text { margin-top: 40px; text-align: center; }
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: Company
+  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt=""></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li class="dropdown"><a href="about.html" class="active"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+			  <li><a href="missionandvission.html">Mission and Vission</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="whoweare.html" class="active">Who We Are</a></li>
+			  <li><a href="ourpartner.html">Our Partners</a></li>
+            </ul>
+          </li>
+
+          <li><a href="whatwedo.html">What We Do</a></li>
+          <li><a href="getinvolved.html">Get Involved</a></li>
+          <li><a href="pricing.html">Donate</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+  
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Who We Are</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Who We Are</li>
+        </ol>
+      </div>
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <main id="main">
+
+    <!-- ======= Hero Intro Section ======= -->
+    <section class="who-we-are-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="hero-img-wrapper">
+              <img src="assets/img/slide/slide-3.jpg" alt="SL Mariners FC Team Spirit">
+            </div>
+          </div>
+          <div class="col-lg-6 hero-text" data-aos="fade-left">
+            <h2>More Than a Club.<br>We Are a <span>Movement</span>.</h2>
+            <p>
+              Born in the heart of Freetown, SL Marina Football Club was founded on a simple but powerful belief: football has the power to transform lives. We are not just a team that plays on the pitch; we are a family dedicated to nurturing talent, building character, and uplifting our community.
+            </p>
+            <p>
+              From the dusty streets to the bright lights of the stadium, we provide a safe haven where young athletes can dream big, work hard, and achieve greatness. We are the proud representatives of Sierra Leone's resilient spirit.
+            </p>
+            <a href="getinvolved.html" class="btn btn-danger btn-lg mt-3 px-4">Join Our Journey</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Hero Intro Section -->
+
+    <!-- ======= Core Pillars Section ======= -->
+    <section class="pillars-section">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2 style="font-weight: 800; color: #1e3c72;">Our Core <span style="color: #eb5d1e;">Pillars</span></h2>
+          <p class="text-muted" style="max-width: 600px; margin: 0 auto;">The foundational values that drive every decision we make and every life we touch.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="bi bi-people-fill"></i></div>
+              <h4>Community First</h4>
+              <p>We believe in giving back. Every success we achieve on the pitch is shared with the neighborhoods that raised us.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="bi bi-trophy-fill"></i></div>
+              <h4>Elite Development</h4>
+              <p>We provide world-class coaching and facilities to ensure our players reach their highest athletic potential.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="bi bi-shield-check"></i></div>
+              <h4>Unwavering Integrity</h4>
+              <p>Fair play, honesty, and respect are non-negotiable. We build men and women of strong moral character.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="pillar-card">
+              <div class="pillar-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+              <h4>Future Leaders</h4>
+              <p>Beyond football, we equip our youth with education and life skills to become the next generation of leaders.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Core Pillars Section -->
+
+    <!-- ======= Impact Stats Section ======= -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-item">
+              <h3>10+</h3>
+              <p>Years of Excellence</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-item">
+              <h3>500+</h3>
+              <p>Youth Trained</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-item">
+              <h3>50+</h3>
+              <p>Community Events</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="stat-item">
+              <h3>1</h3>
+              <p>Unified Family</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Impact Stats Section -->
+
+    <!-- ======= Our Journey Section ======= -->
+    <section class="journey-section">
+      <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+          <h2 style="font-weight: 800; color: #1e3c72;">Our <span style="color: #eb5d1e;">Journey</span></h2>
+          <p class="text-muted" style="max-width: 600px; margin: 0 auto;">From humble beginnings to becoming a beacon of hope in Sierra Leonean football.</p>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-content">
+              <span class="timeline-year">2014</span>
+              <h4>The Foundation</h4>
+              <p>SL Marina FC was officially registered, starting with a small group of passionate youths and a single football on a local pitch in Freetown.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-content">
+              <span class="timeline-year">2017</span>
+              <h4>Youth Academy Launch</h4>
+              <p>We established our formal youth development program, introducing structured coaching, education support, and nutritional guidance.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-content">
+              <span class="timeline-year">2020</span>
+              <h4>Community Outreach Expansion</h4>
+              <p>Launched major community initiatives, including food drives and health awareness campaigns, solidifying our role beyond the pitch.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-content">
+              <span class="timeline-year">Present</span>
+              <h4>Rising to New Heights</h4>
+              <p>Today, we are a recognized force in Sierra Leonean football, continuously producing talent and inspiring the next generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Our Journey Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>SL Mariners FC</h3>
+            <p>
+               2 <sup>A</sup> Fisher Street, Off Sani Abacha <br>
+              Freetown<br>
+              Sierra Leone <br><br>
+              <strong>Phone:</strong> +232 76391399<br>
+              <strong>Email:</strong> slmarinersfc@gmail.com<br>
+            </p>
+          </div>
+		  
+		   <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Menu</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="whatwedo.html">What We Do</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.html">Donate</a></li>
+			  <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
+			  <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+		  
+		   <div class="col-lg-3 col-md-6 footer-links">
+             <h4>What We Do</h4> 
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Gallery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.html">Donate Now</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Pictures</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+            </ul>
+          </div>
+          
+		  <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Stay updated with our latest matches, academy news, and community outreach programs. Join the Mariners family today!</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+		  
+    <div class="container d-md-flex py-4">
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
+        </div>
+      </div>
+  
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+</body>
+</html>
