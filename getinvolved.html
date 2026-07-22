@@ -1,1 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Get Involved - SL Marina Football Club</title>
+  <meta content="Discover how you can get involved with SL Marina Football Club. Volunteer, sponsor, join the academy, or support our community outreach in Freetown." name="description">
+  <meta content="get involved, volunteer, sponsor, youth academy, football, freetown, sierra leone, sl mariners" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Creative Enhancements for Get Involved Page -->
+  <style>
+    :root {
+      --club-blue: #1e3c72;
+      --club-blue-light: #2a5298;
+      --club-orange: #eb5d1e;
+      --club-orange-light: #ff7b3d;
+    }
+
+    /* Inspiring Intro Section */
+    .involve-intro {
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .involve-intro::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: var(--club-orange);
+      opacity: 0.05;
+      border-radius: 50%;
+    }
+    .involve-intro h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--club-blue);
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    .involve-intro h2 span {
+      color: var(--club-orange);
+    }
+    .involve-intro p {
+      font-size: 1.15rem;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* Action Cards */
+    .action-section {
+      padding: 60px 0 80px;
+      background: #fff;
+    }
+    .action-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(0,0,0,0.04);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .action-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--club-orange), var(--club-orange-light));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .action-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(30, 60, 114, 0.15);
+    }
+    .action-card:hover::after {
+      transform: scaleX(1);
+    }
+    .action-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(235, 93, 30, 0.1);
+      color: var(--club-orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 25px;
+      transition: all 0.4s ease;
+    }
+    .action-card:hover .action-icon {
+      background: var(--club-orange);
+      color: #fff;
+      transform: rotateY(180deg);
+    }
+    .action-card h4 {
+      font-weight: 700;
+      color: var(--club-blue);
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+    }
+    .action-card p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+    .btn-action {
+      display: inline-block;
+      padding: 10px 25px;
+      background: transparent;
+      color: var(--club-orange);
+      border: 2px solid var(--club-orange);
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+    .btn-action:hover {
+      background: var(--club-orange);
+      color: #fff;
+    }
+
+    /* Portfolio / Gallery Polish */
+    .portfolio .portfolio-info {
+      background: rgba(30, 60, 114, 0.9);
+    }
+    .portfolio .portfolio-info h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    /* Call to Action Section */
+    .involve-cta {
+      background: linear-gradient(135deg, var(--club-blue) 0%, var(--club-blue-light) 100%);
+      padding: 80px 0;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .involve-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+    .involve-cta h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .involve-cta p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+    .btn-cta-primary {
+      background: var(--club-orange);
+      color: #fff;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 10px 25px rgba(235, 93, 30, 0.3);
+    }
+    .btn-cta-primary:hover {
+      background: #fff;
+      color: var(--club-orange);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: Company
+  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt=""></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li class="dropdown"><a href="about.html" class="active"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+			  <li><a href="missionandvision.html">Mission and Vision</a></li>
+              <li><a href="team.html">Our Team</a></li>
+             <li><a href="whoweare.html">Who We Are</a></li>
+			  <li><a href="ourpartner.html">Our Partners</a></li>
+            </ul>
+          </li>
+
+          <li><a href="whatwedo.html">What We Do</a></li>
+          <li><a href="getinvolved.html" class="active">Get Involved</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="blog.html">Review</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex">
+        <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  
+   <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Get Involved</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Get Involved</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+	
+    <main id="main">
+
+      <!-- ======= Inspiring Intro Section ======= -->
+      <section class="involve-intro">
+        <div class="container" data-aos="fade-up">
+          <h2>Be Part of the <span>Movement</span></h2>
+          <p>
+            SL Marina Football Club is more than just a team; it's a community-driven movement. Whether you have time to volunteer, resources to sponsor, or passion to cheer from the stands, there is a place for you in our family. Together, we can change lives in Freetown.
+          </p>
+        </div>
+      </section><!-- End Inspiring Intro Section -->
+
+      <!-- ======= Ways to Get Involved (Action Cards) ======= -->
+      <section class="action-section">
+        <div class="container">
+          <div class="row g-4">
+            
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="action-card">
+                <div class="action-icon"><i class="bi bi-person-hearts"></i></div>
+                <h4>Volunteer Your Time</h4>
+                <p>Share your skills! We need assistant coaches, event organizers, and mentors to help guide our youth both on and off the pitch.</p>
+                <a href="contact.html" class="btn-action">Become a Volunteer</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="action-card">
+                <div class="action-icon"><i class="bi bi-briefcase"></i></div>
+                <h4>Sponsor the Club</h4>
+                <p>Partner with us to provide kits, equipment, and facilities. Your brand will gain visibility while making a tangible social impact.</p>
+                <a href="ourpartner.html" class="btn-action">Explore Sponsorship</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="action-card">
+                <div class="action-icon"><i class="bi bi-trophy"></i></div>
+                <h4>Join the Academy</h4>
+                <p>Are you a young, passionate player in Freetown? Join our youth academy and get the professional training you need to succeed.</p>
+                <a href="contact.html" class="btn-action">Register Now</a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="action-card">
+                <div class="action-icon"><i class="bi bi-megaphone"></i></div>
+                <h4>Be a Proud Supporter</h4>
+                <p>Fill the stands, wear the colors, and amplify our story on social media. The 12th player is always the most important.</p>
+                <a href="blog.html" class="btn-action">Follow Our Journey</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section><!-- End Ways to Get Involved -->
+
+      <!-- ======= Community in Action (Gallery) ======= -->
+      <section id="portfolio" class="portfolio section-bg py-5">
+        <div class="container">
+          <div class="section-title text-center mb-4" data-aos="fade-up">
+            <h2 style="font-weight: 800; color: var(--club-blue);">Our Community in <span style="color: var(--club-orange);">Action</span></h2>
+            <p class="text-muted">See the real-world impact of our supporters, volunteers, and players.</p>
+          </div>
+
+          <div class="row" data-aos="fade-up">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-app">Volunteering</li>
+                <li data-filter=".filter-card">Sponsorship</li>
+                <li data-filter=".filter-web">Academy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row portfolio-container" data-aos="fade-up">
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="Youth Coaching">
+              <div class="portfolio-info">
+                <h4>Youth Coaching Volunteer</h4>
+                <p>Volunteering</p>
+                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Youth Coaching Volunteer"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="Academy Training">
+              <div class="portfolio-info">
+                <h4>Academy Training Session</h4>
+                <p>Academy</p>
+                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Academy Training Session"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="Sponsor Meet & Greet">
+              <div class="portfolio-info">
+                <h4>Local Business Sponsorship</h4>
+                <p>Sponsorship</p>
+                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Local Business Sponsorship"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="Community Clean-up">
+              <div class="portfolio-info">
+                <h4>Community Clean-up Drive</h4>
+                <p>Volunteering</p>
+                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Community Clean-up Drive"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="Match Day Support">
+              <div class="portfolio-info">
+                <h4>Match Day Fan Support</h4>
+                <p>Academy</p>
+                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Match Day Fan Support"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="Equipment Donation">
+              <div class="portfolio-info">
+                <h4>Equipment Donation Handover</h4>
+                <p>Sponsorship</p>
+                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Equipment Donation Handover"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="Mentorship Program">
+              <div class="portfolio-info">
+                <h4>After-School Mentorship</h4>
+                <p>Volunteering</p>
+                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="After-School Mentorship"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="Kit Launch">
+              <div class="portfolio-info">
+                <h4>New Season Kit Launch</h4>
+                <p>Sponsorship</p>
+                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="New Season Kit Launch"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="Graduation Day">
+              <div class="portfolio-info">
+                <h4>Academy Graduation Day</h4>
+                <p>Academy</p>
+                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Academy Graduation Day"><i class="bx bx-plus"></i></a>
+                <a href="getinvolved-details.html" class="details-link" title="Click For Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section><!-- End Community in Action Section -->
+
+      <!-- ======= Final Call to Action ======= -->
+      <section class="involve-cta" data-aos="fade-up">
+        <div class="container position-relative">
+          <h3>Ready to Make a Difference?</h3>
+          <p>Every great achievement starts with a single step. Reach out to us today and let's build the future of Sierra Leonean football together.</p>
+          <a href="contact.html" class="btn-cta-primary">Contact Us Today</a>
+        </div>
+      </section><!-- End Final Call to Action -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h3>SL Mariners FC</h3>
+              <p>
+                2 <sup>A</sup> Fisher Street, Off Sani Abacha <br>
+                Freetown<br>
+                Sierra Leone <br><br>
+                <strong>Phone:</strong> +232 76391399<br>
+                <strong>Email:</strong> slmarinersfc@gmail.com<br>
+              </p>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Menu</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="whatwedo.html">What We Do</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Review</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>What We Do</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved Details</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Gallary</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate Now</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Picture</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+              </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Join Our Newsletter</h4>
+              <p>Stay updated with our latest matches, academy news, and community outreach programs. Join the Mariners family today!</p>
+              <form action="" method="post">
+                <input type="email" name="email" placeholder="Enter your email"><input type="submit" value="Subscribe">
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+            
+      <div class="container d-md-flex py-4">
+        <div class="me-md-auto text-center text-md-start">
+          <div class="copyright">
+            &copy; 2019 Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
+          </div>
+        </div>
+        
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>
