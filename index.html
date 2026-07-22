@@ -657,9 +657,17 @@
 		  <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Stay updated with match schedules, academy news, and community events. Join the Mariners family today!</p>
-            <form action="" method="post">
-              <input type="email" name="email" placeholder="Enter your email"><input type="submit" value="Subscribe">
+            
+            <!-- WORKING NEWSLETTER FORM -->
+            <form id="newsletterForm" action="https://formspree.io/f/mnjevbbd" method="POST">
+              <input type="hidden" name="_subject" value="New Newsletter Subscription - SL Mariners FC">
+              <input type="email" name="email" placeholder="Enter your email" required>
+              <input type="submit" value="Subscribe" id="newsletterBtn">
             </form>
+            <p id="newsletter-status" style="display: none; color: #28a745; margin-top: 10px; font-size: 0.9rem; font-weight: 600;">
+              <i class="bi bi-check-circle-fill"></i> Thank you for subscribing!
+            </p>
+            
           </div>
 
         </div>
@@ -700,7 +708,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Custom JS for mobile dropdown toggle and close/reopen menu -->
+  <!-- Custom JS for mobile dropdown, close/reopen menu, and newsletter -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const navbar = document.getElementById('navbar');
@@ -739,6 +747,49 @@
           document.body.classList.remove('menu-closed');
         }
       });
+
+      // ==========================================
+      // Newsletter Form Handler
+      // ==========================================
+      const newsletterForm = document.getElementById('newsletterForm');
+      const newsletterBtn = document.getElementById('newsletterBtn');
+      const newsletterStatus = document.getElementById('newsletter-status');
+
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async function(e) {
+          e.preventDefault(); // Prevent default page reload
+          
+          const originalText = newsletterBtn.value;
+          newsletterBtn.value = 'Subscribing...';
+          newsletterBtn.disabled = true;
+          newsletterStatus.style.display = 'none';
+
+          try {
+            const response = await fetch(newsletterForm.action, {
+              method: 'POST',
+              body: new FormData(newsletterForm),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+              newsletterForm.reset(); // Clears the input field
+              newsletterStatus.style.display = 'block'; // Shows success message
+              
+              // Hide the success message after 4 seconds
+              setTimeout(() => {
+                newsletterStatus.style.display = 'none';
+              }, 4000);
+            } else {
+              alert('There was a problem subscribing. Please try again.');
+            }
+          } catch (error) {
+            alert('Network error. Please check your connection and try again.');
+          } finally {
+            newsletterBtn.value = originalText;
+            newsletterBtn.disabled = false;
+          }
+        });
+      }
     });
   </script>
 
