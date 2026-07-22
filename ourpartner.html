@@ -1,1 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SL Marina Football Club - Our Partners</title>
+  <meta content="Discover the amazing organizations and sponsors that partner with SL Marina Football Club to empower youth in Sierra Leone." name="description">
+  <meta content="partners, sponsors, collaborators, football, freetown, sierra leone, sl mariners" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Creative Enhancements for Partners Page -->
+  <style>
+    :root {
+      --club-blue: #1e3c72;
+      --club-orange: #eb5d1e;
+    }
+
+    /* Partners Intro Section */
+    .partners-intro {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      text-align: center;
+    }
+    .partners-intro h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--club-blue);
+      margin-bottom: 20px;
+    }
+    .partners-intro h2 span {
+      color: var(--club-orange);
+    }
+    .partners-intro p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* Creative Partner Cards */
+    .partner-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(0,0,0,0.03);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .partner-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--club-orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .partner-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(30, 60, 114, 0.15);
+    }
+    .partner-card:hover::before {
+      transform: scaleX(1);
+    }
+    .partner-logo-wrapper {
+      width: 100px;
+      height: 100px;
+      background: #f8f9fa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      transition: all 0.4s ease;
+    }
+    .partner-card:hover .partner-logo-wrapper {
+      background: var(--club-blue);
+    }
+    .partner-logo-wrapper i {
+      font-size: 2.5rem;
+      color: var(--club-orange);
+      transition: color 0.4s ease;
+    }
+    .partner-card:hover .partner-logo-wrapper i {
+      color: #fff;
+    }
+    .partner-card h4 {
+      font-weight: 700;
+      color: var(--club-blue);
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+    }
+    .partner-tag {
+      display: inline-block;
+      background: rgba(235, 93, 30, 0.1);
+      color: var(--club-orange);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 15px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+    .partner-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Become a Partner CTA */
+    .partner-cta {
+      background: linear-gradient(135deg, var(--club-blue) 0%, #2a5298 100%);
+      padding: 80px 0;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .partner-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+    .partner-cta h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .partner-cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    .btn-partner {
+      background: var(--club-orange);
+      color: #fff;
+      padding: 12px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: 2px solid var(--club-orange);
+    }
+    .btn-partner:hover {
+      background: transparent;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Existing Clients Section Polish */
+    .clients .client-logo {
+      transition: all 0.3s ease;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .clients .client-logo:hover {
+      background: #fff;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transform: translateY(-5px);
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: Company
+  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt=""></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li class="dropdown"><a href="about.html" class="active"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+			  <li><a href="missionandvision.html">Mission and Vision</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="whoweare.html">Who We Are</a></li>
+			  <li><a href="ourpartner.html" class="active">Our Partners</a></li>
+            </ul>
+          </li>
+
+          <li><a href="whatwedo.html">What We Do</a></li>
+          <li><a href="getinvolved.html">Get Involved</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="blog.html">Review</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex">
+        <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+  
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Our Partners</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Our Partners</li>
+        </ol>
+      </div>
+    </div>
+  </section><!-- End Breadcrumbs -->
+  
+  <main id="main">
+
+    <!-- ======= Partners Intro Section ======= -->
+    <section class="partners-intro">
+      <div class="container" data-aos="fade-up">
+        <h2>Empowering Youth <span>Together</span></h2>
+        <p>
+          SL Marina Football Club does not stand alone. We are proud to collaborate with visionary organizations, local businesses, and community leaders who share our passion for developing the next generation of Sierra Leonean talent. Together, we are building a brighter future.
+        </p>
+      </div>
+    </section><!-- End Partners Intro Section -->
+
+    <!-- ======= Featured Partners Section ======= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="partner-card">
+              <div class="partner-logo-wrapper">
+                <i class="bi bi-building"></i>
+              </div>
+              <span class="partner-tag">Official Kit Sponsor</span>
+              <h4>Freetown Sports Apparel</h4>
+              <p>Providing high-quality training kits, match-day jerseys, and equipment to ensure our players look and feel like professionals.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="partner-card">
+              <div class="partner-logo-wrapper">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <span class="partner-tag">Health & Wellness Partner</span>
+              <h4>Mariners Medical Group</h4>
+              <p>Ensuring the health and safety of our athletes with on-site medical support, physiotherapy, and nutritional guidance programs.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="partner-card">
+              <div class="partner-logo-wrapper">
+                <i class="bi bi-book"></i>
+              </div>
+              <span class="partner-tag">Education Partner</span>
+              <h4>Sierra Leone Youth Fund</h4>
+              <p>Supporting our dual-career pathway by providing scholarships, tutoring, and educational materials for our youth academy players.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="partner-card">
+              <div class="partner-logo-wrapper">
+                <i class="bi bi-camera-reels"></i>
+              </div>
+              <span class="partner-tag">Media Partner</span>
+              <h4>SL Sports Network</h4>
+              <p>Amplifying our story and broadcasting our matches to inspire communities across the nation and beyond.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="partner-card">
+              <div class="partner-logo-wrapper">
+                <i class="bi bi-tree"></i>
+              </div>
+              <span class="partner-tag">Community Partner</span>
+              <h4>Green Freetown Initiative</h4>
+              <p>Collaborating on community clean-up drives and environmental awareness campaigns alongside our football outreach programs.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="partner-card">
+              <div class="partner-logo-wrapper">
+                <i class="bi bi-cup-hot"></i>
+              </div>
+              <span class="partner-tag">Hospitality Partner</span>
+              <h4>Coastal Refreshments Co.</h4>
+              <p>Keeping our players and fans hydrated and energized during intense training sessions and exciting match days.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Featured Partners Section -->
+
+    <!-- ======= Become a Partner CTA ======= -->
+    <section class="partner-cta">
+      <div class="container" data-aos="zoom-in">
+        <h2>Join the SL Mariners Family</h2>
+        <p>Are you a business or organization looking to make a tangible impact in Sierra Leone? Partner with us to reach a passionate audience while empowering the next generation of leaders.</p>
+        <a href="contact.html" class="btn-partner">Become a Partner Today</a>
+      </div>
+    </section><!-- End Become a Partner CTA -->
+	
+    <!-- ======= Our Clients/Sponsors Section ======= -->
+    <section id="clients" class="clients py-5 bg-light">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Trusted By Our Community</h2>
+          <p class="text-muted">A growing network of local businesses and organizations that believe in our mission.</p>
+        </div>
+
+        <div class="row no-gutters clients-wrap clearfix justify-content-center" data-aos="fade-up">
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-1.png" class="img-fluid" alt="Partner 1">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-2.jpg" class="img-fluid" alt="Partner 2">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="Partner 3">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="Partner 4">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-5.jpg" class="img-fluid" alt="Partner 5">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-6.jpg" class="img-fluid" alt="Partner 6">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="Partner 7">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="Partner 8">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Our Clients Section -->
+	  
+
+  </main><!-- End #main -->
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>SL Mariners FC</h3>
+            <p>
+               2 <sup>A</sup> Fisher Street, Off Sani Abacha <br>
+              Freetown<br>
+              Sierra Leone <br><br>
+              <strong>Phone:</strong> +232 76391399<br>
+              <strong>Email:</strong> slmarinersfc@gmail.com<br>
+            </p>
+          </div>
+		  
+		   <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Menu</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="whatwedo.html">What We Do</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate</a></li>
+			  <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Review</a></li>
+			  <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+		  
+		   <div class="col-lg-3 col-md-6 footer-links">
+            <h4>What We Do</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved Details</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Gallary</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate Now</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Picture</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+            </ul>
+          </div>
+          
+		  <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Stay updated with our latest matches, academy news, and community outreach programs. Join the Mariners family today!</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+		  
+    <div class="container d-md-flex py-4">
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
+        </div>
+      </div>
+  
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+</body>
+</html>
