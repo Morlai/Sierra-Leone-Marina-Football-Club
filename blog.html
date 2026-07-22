@@ -314,6 +314,113 @@
       flex: 1;
     }
 
+    /* Facebook Live Section */
+    .facebook-live-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .facebook-live-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .facebook-live-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--club-blue);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .facebook-live-header h2 span {
+      color: #1877F2; /* Facebook Blue */
+    }
+    .facebook-live-header p {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .facebook-live-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    .facebook-post-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      border: 2px solid #f0f0f0;
+    }
+    .facebook-post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(24, 119, 242, 0.15);
+      border-color: #1877F2;
+    }
+    .facebook-post-header {
+      background: linear-gradient(135deg, #1877F2 0%, #42b72a 100%);
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .facebook-post-header i {
+      font-size: 2rem;
+    }
+    .facebook-post-header h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .facebook-post-header span {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+    .facebook-post-content {
+      padding: 25px;
+    }
+    .facebook-post-content .fb-post,
+    .facebook-post-content .fb-video {
+      width: 100%;
+    }
+    .fb-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ff0000;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .fb-page-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1877F2;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+    .fb-page-link:hover {
+      background: #166fe5;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
+    }
+
     /* Newsletter CTA Section */
     .blog-cta {
       background: linear-gradient(135deg, var(--club-orange) 0%, var(--club-orange-light) 100%);
@@ -381,8 +488,13 @@
       .featured-post-content { padding: 25px; }
       .featured-post-content h2 { font-size: 1.5rem; }
       .newsletter-form-inline { flex-direction: column; }
+      .facebook-live-grid { grid-template-columns: 1fr; }
     }
   </style>
+
+  <!-- Facebook SDK -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="YOUR_NONCE"></script>
 
   <!-- =======================================================
   * Template Name: Company
@@ -617,6 +729,88 @@
 
       </div>
     </section><!-- End Latest Posts Grid -->
+
+    <!-- ======= Facebook Live Posts Section ======= -->
+    <section class="facebook-live-section">
+      <div class="container">
+        <div class="facebook-live-header" data-aos="fade-up">
+          <h2>Follow Us on <span>Facebook</span></h2>
+          <p>Stay connected with live match updates, behind-the-scenes content, and exclusive club announcements.</p>
+        </div>
+
+        <div class="facebook-live-grid">
+          
+          <!-- Facebook Post 1 -->
+          <div class="facebook-post-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="facebook-post-header">
+              <i class="bi bi-facebook"></i>
+              <div>
+                <h4>Latest Match Highlights</h4>
+                <span>Live from the Stadium</span>
+              </div>
+            </div>
+            <div class="facebook-post-content">
+              <!-- Replace the data-href with your actual Facebook post URL -->
+              <div class="fb-post" data-href="https://www.facebook.com/SLMarinersFC/posts/123456789" data-width="500" data-show-text="true">
+                <blockquote cite="https://www.facebook.com/SLMarinersFC/posts/123456789" class="fb-xfbml-parse-ignore">
+                  <p>Match day excitement! Watch the highlights from our latest victory.</p>
+                  <p>Posted by <a href="https://www.facebook.com/SLMarinersFC">SL Mariners FC</a> on&nbsp;<a href="https://www.facebook.com/SLMarinersFC/posts/123456789">Monday, October 23, 2023</a></p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <!-- Facebook Post 2 -->
+          <div class="facebook-post-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="facebook-post-header">
+              <i class="bi bi-camera-video"></i>
+              <div>
+                <h4><span class="fb-live-badge"><i class="bi bi-circle-fill" style="font-size: 8px;"></i> LIVE</span></h4>
+                <span>Training Session</span>
+              </div>
+            </div>
+            <div class="facebook-post-content">
+              <!-- Replace the data-href with your actual Facebook video URL -->
+              <div class="fb-video" data-href="https://www.facebook.com/SLMarinersFC/videos/987654321" data-width="500" data-show-text="true">
+                <blockquote cite="https://www.facebook.com/SLMarinersFC/videos/987654321" class="fb-xfbml-parse-ignore">
+                  <a href="https://www.facebook.com/SLMarinersFC/videos/987654321">Live Training Session with the Academy</a>
+                  <p>Posted by <a href="https://www.facebook.com/SLMarinersFC">SL Mariners FC</a> on&nbsp;<a href="https://www.facebook.com/SLMarinersFC/videos/987654321">Wednesday, October 18, 2023</a></p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <!-- Facebook Post 3 -->
+          <div class="facebook-post-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="facebook-post-header">
+              <i class="bi bi-chat-heart"></i>
+              <div>
+                <h4>Community Event</h4>
+                <span>Food Drive Success</span>
+              </div>
+            </div>
+            <div class="facebook-post-content">
+              <!-- Replace the data-href with your actual Facebook post URL -->
+              <div class="fb-post" data-href="https://www.facebook.com/SLMarinersFC/posts/456789123" data-width="500" data-show-text="true">
+                <blockquote cite="https://www.facebook.com/SLMarinersFC/posts/456789123" class="fb-xfbml-parse-ignore">
+                  <p>Thank you to everyone who participated in our community food drive! Together we made a difference.</p>
+                  <p>Posted by <a href="https://www.facebook.com/SLMarinersFC">SL Mariners FC</a> on&nbsp;<a href="https://www.facebook.com/SLMarinersFC/posts/456789123">Friday, October 13, 2023</a></p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Facebook Page Link -->
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="https://www.facebook.com/SLMarinersFC" target="_blank" class="fb-page-link">
+            <i class="bi bi-facebook"></i> Visit Our Facebook Page
+          </a>
+        </div>
+
+      </div>
+    </section><!-- End Facebook Live Posts Section -->
 
     <!-- ======= Newsletter CTA Section ======= -->
     <section class="blog-cta" data-aos="fade-up">
