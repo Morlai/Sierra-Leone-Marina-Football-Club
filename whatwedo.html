@@ -112,7 +112,7 @@
       width: 100%;
       height: 100%;
       background: white;
-      opacity: 0.9;
+      opacity: 0.92;
       z-index: 0;
     }
     .pillar-card {
@@ -179,38 +179,72 @@
       margin: 0;
     }
 
-    /* Impact Stats Section */
-    .impact-stats {
-      background: linear-gradient(135deg, var(--club-blue) 0%, var(--club-blue-light) 100%);
-      padding: 80px 0;
-      color: #fff;
-      text-align: center;
+    /* ===== NEW: Redesigned Impact Stats Section ===== */
+    .impact-stats-new {
+      padding: 100px 0;
+      background: #0f172a; /* Dark slate background */
       position: relative;
       overflow: hidden;
     }
-    .impact-stats::before {
+    .impact-stats-new::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(235, 93, 30, 0.1) 0%, transparent 60%);
+      animation: pulseGlow 8s infinite alternate;
     }
-    .stat-box h3 {
-      font-size: 4rem;
-      font-weight: 800;
+    @keyframes pulseGlow {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.2); opacity: 0.8; }
+    }
+    .stat-card-new {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 40px 20px;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .stat-card-new:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--club-orange);
+      box-shadow: 0 20px 40px rgba(235, 93, 30, 0.15);
+    }
+    .stat-icon-new {
+      font-size: 2.5rem;
       color: var(--club-orange);
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+    .stat-card-new:hover .stat-icon-new {
+      transform: scale(1.2) rotate(5deg);
+    }
+    .stat-number-new {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #fff;
       font-family: 'Poppins', sans-serif;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       line-height: 1;
     }
-    .stat-box p {
-      font-size: 1.1rem;
+    .stat-label-new {
+      font-size: 1rem;
+      color: #94a3b8;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      opacity: 0.9;
+      letter-spacing: 1.5px;
     }
 
     /* Connected Timeline Pathway */
@@ -333,6 +367,9 @@
       .wwd-hero h1 {
         font-size: 2.2rem;
       }
+      .stat-number-new {
+        font-size: 2.8rem;
+      }
     }
   </style>
 
@@ -407,7 +444,7 @@
 	
     <main id="main">
 
-      <!-- ====== New: Background Container for Hero & Pillars Sections ====== -->
+      <!-- ====== Background Container for Hero & Pillars Sections ====== -->
       <div class="hero-pillars-background">
         <!-- ======= Modern Hero Section ======= -->
         <section class="wwd-hero">
@@ -482,32 +519,40 @@
       </div>
       <!-- ====== End: Background Container ====== -->
 
-      <!-- ======= Impact Stats Section ======= -->
-      <section class="impact-stats">
+      <!-- ======= NEW: Redesigned Impact Stats Section ======= -->
+      <section class="impact-stats-new">
         <div class="container position-relative">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 style="color: #fff; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 2.5rem;">Our <span style="color: var(--club-orange);">Impact</span> in Numbers</h2>
+            <p style="color: #94a3b8; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Real results from our dedication to the youth and communities of Sierra Leone.</p>
+          </div>
           <div class="row g-4">
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-              <div class="stat-box">
-                <h3>500+</h3>
-                <p>Youth Trained</p>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="stat-card-new">
+                <i class="bi bi-people-fill stat-icon-new"></i>
+                <div class="stat-number-new">500+</div>
+                <div class="stat-label-new">Youth Trained</div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-              <div class="stat-box">
-                <h3>50+</h3>
-                <p>Community Events</p>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="stat-card-new">
+                <i class="bi bi-calendar-event-fill stat-icon-new"></i>
+                <div class="stat-number-new">50+</div>
+                <div class="stat-label-new">Community Events</div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-              <div class="stat-box">
-                <h3>100%</h3>
-                <p>School Retention</p>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="stat-card-new">
+                <i class="bi bi-mortarboard-fill stat-icon-new"></i>
+                <div class="stat-number-new">100%</div>
+                <div class="stat-label-new">School Retention</div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-              <div class="stat-box">
-                <h3>15+</h3>
-                <p>Active Partners</p>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="stat-card-new">
+                <i class="bi bi-hand-thumbs-up-fill stat-icon-new"></i>
+                <div class="stat-number-new">15+</div>
+                <div class="stat-label-new">Active Partners</div>
               </div>
             </div>
           </div>
