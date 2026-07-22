@@ -1,1 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SL Marina Football Club - What We Do</title>
+  <meta content="Discover how SL Marina Football Club empowers youth in Freetown through football, education, and community outreach." name="description">
+  <meta content="what we do, youth academy, community outreach, football, freetown, sierra leone, sl mariners" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Creative Enhancements for What We Do Page -->
+  <style>
+    :root {
+      --club-blue: #1e3c72;
+      --club-orange: #eb5d1e;
+    }
+
+    /* Intro Section */
+    .what-we-do-intro {
+      padding: 60px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    .what-we-do-intro h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--club-blue);
+      margin-bottom: 20px;
+    }
+    .what-we-do-intro h2 span {
+      color: var(--club-orange);
+    }
+    .what-we-do-intro p {
+      max-width: 750px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    /* Activity Cards */
+    .activity-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-bottom: 4px solid transparent;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--club-blue) 0%, #2a5298 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+    .activity-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(30, 60, 114, 0.2);
+      border-bottom: 4px solid var(--club-orange);
+    }
+    .activity-card:hover::before {
+      opacity: 1;
+    }
+    .activity-card > * {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s ease;
+    }
+    .activity-card:hover h4, 
+    .activity-card:hover p, 
+    .activity-card:hover .activity-icon {
+      color: #fff;
+    }
+    .activity-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(235, 93, 30, 0.1);
+      color: var(--club-orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 25px;
+      transition: all 0.4s ease;
+    }
+    .activity-card:hover .activity-icon {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transform: rotateY(180deg);
+    }
+    .activity-card h4 {
+      font-weight: 700;
+      color: var(--club-blue);
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+    }
+    .activity-card p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Impact Stats Section */
+    .impact-stats {
+      background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(30, 60, 114, 0.9)), url('assets/img/slide/slide-1.jpg') center/cover fixed;
+      padding: 80px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .stat-box h3 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--club-orange);
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .stat-box p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    /* Pathway Section */
+    .pathway-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .pathway-step {
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    .pathway-step .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--club-orange);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 auto 20px;
+      box-shadow: 0 5px 15px rgba(235, 93, 30, 0.3);
+    }
+    .pathway-step h5 {
+      font-weight: 700;
+      color: var(--club-blue);
+      margin-bottom: 10px;
+    }
+    .pathway-step p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    /* Connector line for desktop */
+    @media (min-width: 992px) {
+      .pathway-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 50px;
+        right: -50%;
+        width: 100%;
+        height: 3px;
+        background: #e9ecef;
+        z-index: 0;
+      }
+    }
+
+    /* CTA Section */
+    .what-we-do-cta {
+      background: var(--club-orange);
+      padding: 60px 0;
+      text-align: center;
+      color: #fff;
+    }
+    .what-we-do-cta h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .btn-cta {
+      background: #fff;
+      color: var(--club-orange);
+      padding: 12px 35px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn-cta:hover {
+      background: var(--club-blue);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: Company
+  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt=""></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li class="dropdown"><a href="about.html" class="active"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+			  <li><a href="missionandvision.html">Mission and Vision</a></li>
+              <li><a href="team.html">Our Team</a></li>
+             <li><a href="whoweare.html">Who We Are</a></li>
+			  <li><a href="ourpartner.html">Our Partners</a></li>
+            </ul>
+          </li>
+
+          <li><a href="whatwedo.html" class="active">What We Do</a></li>
+          <li><a href="getinvolved.html">Get Involved</a></li>
+          <li><a href="donation.html">Donate</a></li>
+          <li><a href="blog.html">Review</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex">
+        <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  
+   <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>What We Do</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>What We Do</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+	
+    <main id="main">
+
+      <!-- ======= What We Do Intro ======= -->
+      <section class="what-we-do-intro">
+        <div class="container" data-aos="fade-up">
+          <h2>Transforming Lives <span>Through Football</span></h2>
+          <p>
+            At SL Marina Football Club, we go beyond the pitch. We are dedicated to holistic youth development, combining elite football training with education, mentorship, and community empowerment to build the leaders of tomorrow in Sierra Leone.
+          </p>
+        </div>
+      </section><!-- End What We Do Intro -->
+
+      <!-- ======= Core Activities Section ======= -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-4">
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="activity-card">
+                <div class="activity-icon"><i class="bi bi-trophy"></i></div>
+                <h4>Youth Football Academy</h4>
+                <p>Providing professional, age-grade coaching to nurture raw talent, develop technical skills, and instill tactical intelligence in young athletes.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="activity-card">
+                <div class="activity-icon"><i class="bi bi-book"></i></div>
+                <h4>Education & Mentorship</h4>
+                <p>Football is the hook, education is the goal. We offer tutoring, scholarship support, and life-skills mentoring to ensure dual-career success.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="activity-card">
+                <div class="activity-icon"><i class="bi bi-people"></i></div>
+                <h4>Community Outreach</h4>
+                <p>Organizing neighborhood clean-ups, health awareness campaigns, and inclusive sports days to unite and uplift the Freetown community.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="activity-card">
+                <div class="activity-icon"><i class="bi bi-heart-pulse"></i></div>
+                <h4>Health & Nutrition</h4>
+                <p>Ensuring our players are physically ready to perform with access to basic medical care, physiotherapy, and nutritious post-training meals.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="activity-card">
+                <div class="activity-icon"><i class="bi bi-flag"></i></div>
+                <h4>Competitive Match Days</h4>
+                <p>Entering local and regional leagues to give our youth real-world competitive experience, building resilience and team spirit under pressure.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+              <div class="activity-card">
+                <div class="activity-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <h4>Talent Pathways</h4>
+                <p>Connecting our most promising players with scouts, higher-level academies, and scholarship opportunities to elevate their careers.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section><!-- End Core Activities Section -->
+
+      <!-- ======= Impact Stats Section ======= -->
+      <section class="impact-stats">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+              <div class="stat-box">
+                <h3>500+</h3>
+                <p>Youth Trained</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="stat-box">
+                <h3>50+</h3>
+                <p>Community Events</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="stat-box">
+                <h3>100%</h3>
+                <p>School Retention</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+              <div class="stat-box">
+                <h3>15+</h3>
+                <p>Active Partners</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><!-- End Impact Stats Section -->
+
+      <!-- ======= The Player Pathway Section ======= -->
+      <section class="pathway-section">
+        <div class="container">
+          <div class="section-title text-center mb-5" data-aos="fade-up">
+            <h2 style="font-weight: 800; color: #1e3c72;">The SL Mariners <span style="color: #eb5d1e;">Pathway</span></h2>
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto;">How we guide a young athlete from their first day on the pitch to becoming a confident leader.</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="pathway-step">
+                <div class="step-number">1</div>
+                <h5>Discover</h5>
+                <p>Open trials and community scouting identify raw talent and passion in local neighborhoods.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="pathway-step">
+                <div class="step-number">2</div>
+                <h5>Develop</h5>
+                <p>Rigorous training, coupled with academic support, builds well-rounded individuals.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="pathway-step">
+                <div class="step-number">3</div>
+                <h5>Compete</h5>
+                <p>Players test their skills in organized leagues, learning teamwork and sportsmanship.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="pathway-step">
+                <div class="step-number">4</div>
+                <h5>Excel</h5>
+                <p>Graduates move on to higher-level clubs, universities, or become community leaders themselves.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><!-- End The Player Pathway Section -->
+
+      <!-- ======= Call to Action ======= -->
+      <section class="what-we-do-cta" data-aos="fade-up">
+        <div class="container">
+          <h3>Want to be a part of our mission?</h3>
+          <p class="mb-3">Whether you want to volunteer, sponsor a player, or partner with us, there is a place for you in the SL Mariners family.</p>
+          <a href="getinvolved.html" class="btn-cta">Get Involved Today</a>
+        </div>
+      </section><!-- End Call to Action -->
+
+    </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>SL Mariners FC</h3>
+            <p>
+               2 <sup>A</sup> Fisher Street, Off Sani Abacha <br>
+              Freetown<br>
+              Sierra Leone <br><br>
+              <strong>Phone:</strong> +232 76391399<br>
+              <strong>Email:</strong> slmarinersfc@gmail.com<br>
+            </p>
+          </div>
+		  
+		   <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Menu</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="whatwedo.html">What We Do</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.html">Donate</a></li>
+			  <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Review</a></li>
+			  <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+		  
+		   <div class="col-lg-3 col-md-6 footer-links">
+             <h4>What We Do</h4> 
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved Details</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Gallary</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="donation.html">Donate Now</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Picture</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+            </ul>
+          </div>
+          
+		  <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Stay updated with our latest matches, academy news, and community outreach programs. Join the Mariners family today!</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+		  
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; 2019 Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
+        </div>
+      </div>
+  
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+</body>
+</html>
