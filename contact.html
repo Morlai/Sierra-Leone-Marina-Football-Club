@@ -154,6 +154,7 @@
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       box-shadow: 0 8px 20px rgba(235, 93, 30, 0.3);
+      cursor: pointer;
     }
     .btn-submit:hover {
       transform: translateY(-3px);
@@ -218,7 +219,7 @@
           <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="about.html">About Us</a></li>
-			  <li><a href="missionandvission.html">Mission and Vission</a></li>
+			  <li><a href="missionandvision.html">Mission and Vision</a></li>
               <li><a href="team.html">Our Team</a></li>
              <li><a href="whoweare.html">Who We Are</a></li>
 			  <li><a href="ourpartner.html">Our Partners</a></li>
@@ -227,7 +228,7 @@
 
           <li><a href="whatwedo.html">What We Do</a></li>
           <li><a href="getinvolved.html">Get Involved</a></li>
-          <li><a href="pricing.html">Donate</a></li>
+          <li><a href="donate.html">Donate</a></li>
           <li><a href="blog.html">Review</a></li>
           <li><a href="contact.html" class="active">Contact Us</a></li>
 
@@ -316,24 +317,25 @@
                 <h3>Send Us a Message</h3>
                 <p>Fill out the form below and our team will get back to you within 24 hours.</p>
                 
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <!-- FORMSPREE INTEGRATION: This sends the form data directly to your email without needing PHP -->
+                <!-- IMPORTANT: If you created a new Formspree form for this page, replace 'mnjevbbd' with your new form ID -->
+                <form action="https://formspree.io/f/mnjevbbd" method="POST">
+                  <input type="hidden" name="_subject" value="New Contact Message - SL Mariners FC">
+                  
                   <div class="row g-3">
                     <div class="col-md-6">
                       <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
                     </div>
                     <div class="col-md-6">
-                      <input type="email" class="form-control" name="email" placeholder="Your Email *" required>
+                      <input type="email" name="email" class="form-control" placeholder="Your Email *" required>
                     </div>
                     <div class="col-md-12">
-                      <input type="text" class="form-control" name="subject" placeholder="Subject *" required>
+                      <input type="text" name="subject" class="form-control" placeholder="Subject *" required>
                     </div>
                     <div class="col-md-12">
-                      <textarea class="form-control" name="message" rows="5" placeholder="Your Message *" required></textarea>
+                      <textarea name="message" class="form-control" rows="5" placeholder="Your Message *" required></textarea>
                     </div>
                     <div class="col-md-12 text-center mt-4">
-                      <div class="loading d-none">Loading</div>
-                      <div class="error-message alert alert-danger d-none"></div>
-                      <div class="sent-message alert alert-success d-none">Your message has been sent. Thank you!</div>
                       <button type="submit" class="btn btn-submit">Send Message</button>
                     </div>
                   </div>
@@ -371,7 +373,7 @@
                 <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="whatwedo.html">What We Do</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="pricing.html">Donate</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Review</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
               </ul>
@@ -380,9 +382,9 @@
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>What We Do</h4>
               <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved Details</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Gallary</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="pricing.html">Donate Now</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="donate.html">Donate Now</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Picture</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
               </ul>
@@ -403,7 +405,7 @@
       <div class="container d-md-flex py-4">
         <div class="me-md-auto text-center text-md-start">
           <div class="copyright">
-            &copy; Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
+            &copy; 2019 Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
           </div>
         </div>
         
