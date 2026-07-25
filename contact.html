@@ -437,21 +437,16 @@
               <h4>Join Our Newsletter</h4>
               <p>Stay updated with our latest matches, academy news, and community outreach programs. Join the Mariners family today!</p>
               
-              <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Stay updated with match schedules, academy news, and community events. Join the Mariners family today!</p>
-            
-            <!-- WORKING NEWSLETTER FORM -->
-            <form id="newsletterForm" action="https://formspree.io/f/xdaqpaok" method="POST">
-              <input type="hidden" name="_subject" value="New Newsletter Subscription - SL Mariners FC">
-              <input type="email" name="email" placeholder="Enter your email" required>
-              <input type="submit" value="Subscribe" id="newsletterBtn">
-            </form>
-            <p id="newsletter-status" style="display: none; color: #28a745; margin-top: 10px; font-size: 0.9rem; font-weight: 600;">
-              <i class="bi bi-check-circle-fill"></i> Thank you for subscribing!
-            </p>
-            
-          </div>
+              <!-- WORKING NEWSLETTER FORM -->
+              <form id="newsletterForm" action="https://formspree.io/f/xdaqpaok" method="POST" class="newsletter-form">
+                <input type="hidden" name="_subject" value="New Newsletter Subscription - SL Mariners FC">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" id="newsletterBtn">Subscribe</button>
+              </form>
+              <p id="newsletter-status" style="display: none; color: #28a745; margin-top: 10px; font-size: 0.9rem; font-weight: 600;">
+                <i class="bi bi-check-circle-fill"></i> Thank you for subscribing!
+              </p>
+            </div>
 
           </div>
         </div>
