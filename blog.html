@@ -824,8 +824,9 @@
           <input type="email" name="email" placeholder="Enter your email address" required>
           <button type="submit" id="newsletterBtn">Subscribe</button>
         </form>
-        <p id="newsletter-status" style="display: none; color: #fff; margin-top: 15px; font-size: 1rem; font-weight: 600;">
-          <i class="bi bi-check-circle-fill"></i> Thank you for subscribing!
+        <!-- UPDATED SUCCESS MESSAGE -->
+        <p id="newsletter-status" style="display: none; color: #fff; margin-top: 15px; font-size: 1.1rem; font-weight: 700;">
+          <i class="bi bi-check-circle-fill"></i> Thanks for Subscribing!
         </p>
 
       </div>
@@ -884,8 +885,9 @@
               <input type="email" name="email" placeholder="Enter your email" required>
               <input type="submit" value="Subscribe" id="footerNewsletterBtn">
             </form>
-            <p id="footerNewsletterStatus" style="display: none; color: #28a745; margin-top: 10px; font-size: 0.9rem; font-weight: 600;">
-              <i class="bi bi-check-circle-fill"></i> Thank you for subscribing!
+            <!-- UPDATED SUCCESS MESSAGE -->
+            <p id="footerNewsletterStatus" style="display: none; color: #28a745; margin-top: 10px; font-size: 1rem; font-weight: 700;">
+              <i class="bi bi-check-circle-fill"></i> Thanks for Subscribing!
             </p>
             
           </div>
@@ -998,7 +1000,7 @@
                   item.status.style.display = 'block';
                   setTimeout(() => { item.status.style.display = 'none'; }, 4000);
                 } else {
-                  alert('Thank you for subscribing!');
+                  alert('Thanks for Subscribing!');
                 }
               } else {
                 alert('There was a problem subscribing. Please try again.');
