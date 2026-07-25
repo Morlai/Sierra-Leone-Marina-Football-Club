@@ -535,9 +535,11 @@
 
         if (newsletterForm) {
           newsletterForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const originalText = newsletterBtn.innerText;
-            newsletterBtn.innerText = 'Subscribing...';
+            e.preventDefault(); // Prevent default page reload
+            
+            const originalText = newsletterBtn.value || newsletterBtn.innerText;
+            if(newsletterBtn.value) newsletterBtn.value = 'Subscribing...';
+            else newsletterBtn.innerText = 'Subscribing...';
             newsletterBtn.disabled = true;
             newsletterStatus.style.display = 'none';
 
@@ -549,8 +551,9 @@
               });
 
               if (response.ok) {
-                newsletterForm.reset();
-                newsletterStatus.style.display = 'block';
+                newsletterForm.reset(); // Clears the input field
+                newsletterStatus.style.display = 'block'; // Shows success message
+                
                 // Hide the success message after 4 seconds
                 setTimeout(() => {
                   newsletterStatus.style.display = 'none';
@@ -561,7 +564,8 @@
             } catch (error) {
               alert('Network error. Please check your connection and try again.');
             } finally {
-              newsletterBtn.innerText = originalText;
+              if(newsletterBtn.value) newsletterBtn.value = originalText;
+              else newsletterBtn.innerText = originalText;
               newsletterBtn.disabled = false;
             }
           });
