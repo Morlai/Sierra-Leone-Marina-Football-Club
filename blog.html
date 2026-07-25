@@ -818,8 +818,8 @@
         <h3>Never Miss a Story</h3>
         <p>Get the latest match reports, academy news, and community updates delivered straight to your inbox.</p>
         
-        <!-- WORKING NEWSLETTER FORM -->
-        <form id="newsletterForm" action="https://formspree.io/f/mnjevbbd" method="POST" class="newsletter-form-inline">
+        <!-- WORKING NEWSLETTER FORM (Inline) -->
+        <form id="newsletterForm" action="https://formspree.io/f/xdqpaok" method="POST" class="newsletter-form-inline">
           <input type="hidden" name="_subject" value="New Newsletter Subscription - SL Mariners FC">
           <input type="email" name="email" placeholder="Enter your email address" required>
           <button type="submit" id="newsletterBtn">Subscribe</button>
@@ -877,10 +877,17 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Stay updated with match schedules, academy news, and community events. Join the Mariners family today!</p>
-            <form id="footerNewsletterForm" action="https://formspree.io/f/mnjevbbd" method="POST">
+            
+            <!-- WORKING NEWSLETTER FORM (Footer) -->
+            <form id="footerNewsletterForm" action="https://formspree.io/f/xdqpaok" method="POST">
               <input type="hidden" name="_subject" value="New Newsletter Subscription - SL Mariners FC">
-              <input type="email" name="email" placeholder="Enter your email" required><input type="submit" value="Subscribe">
+              <input type="email" name="email" placeholder="Enter your email" required>
+              <input type="submit" value="Subscribe" id="footerNewsletterBtn">
             </form>
+            <p id="footerNewsletterStatus" style="display: none; color: #28a745; margin-top: 10px; font-size: 0.9rem; font-weight: 600;">
+              <i class="bi bi-check-circle-fill"></i> Thank you for subscribing!
+            </p>
+            
           </div>
 
         </div>
@@ -961,48 +968,50 @@
       // ==========================================
       // Newsletter Form Handler (Works for both inline and footer forms)
       // ==========================================
-      const newsletterForms = document.querySelectorAll('#newsletterForm, #footerNewsletterForm');
+      const newsletterForms = [
+        { form: document.getElementById('newsletterForm'), btn: document.getElementById('newsletterBtn'), status: document.getElementById('newsletter-status') },
+        { form: document.getElementById('footerNewsletterForm'), btn: document.getElementById('footerNewsletterBtn'), status: document.getElementById('footerNewsletterStatus') }
+      ];
       
-      newsletterForms.forEach(form => {
-        const btn = form.querySelector('button[type="submit"], input[type="submit"]');
-        const status = form.parentElement.querySelector('#newsletter-status') || form.querySelector('.form-status');
-        
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          let originalText = btn.value || btn.innerText;
-          if(btn.value) btn.value = 'Subscribing...';
-          else btn.innerText = 'Subscribing...';
-          btn.disabled = true;
-          
-          if(status) status.style.display = 'none';
+      newsletterForms.forEach(item => {
+        if (item.form) {
+          item.form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            let originalText = item.btn.value || item.btn.innerText;
+            if(item.btn.value) item.btn.value = 'Subscribing...';
+            else item.btn.innerText = 'Subscribing...';
+            item.btn.disabled = true;
+            
+            if(item.status) item.status.style.display = 'none';
 
-          try {
-            const response = await fetch(form.action, {
-              method: 'POST',
-              body: new FormData(form),
-              headers: { 'Accept': 'application/json' }
-            });
+            try {
+              const response = await fetch(item.form.action, {
+                method: 'POST',
+                body: new FormData(item.form),
+                headers: { 'Accept': 'application/json' }
+              });
 
-            if (response.ok) {
-              form.reset();
-              if(status) {
-                status.style.display = 'block';
-                setTimeout(() => { status.style.display = 'none'; }, 4000);
+              if (response.ok) {
+                item.form.reset();
+                if(item.status) {
+                  item.status.style.display = 'block';
+                  setTimeout(() => { item.status.style.display = 'none'; }, 4000);
+                } else {
+                  alert('Thank you for subscribing!');
+                }
               } else {
-                alert('Thank you for subscribing!');
+                alert('There was a problem subscribing. Please try again.');
               }
-            } else {
-              alert('There was a problem subscribing. Please try again.');
+            } catch (error) {
+              alert('Network error. Please check your connection and try again.');
+            } finally {
+              if(item.btn.value) item.btn.value = originalText;
+              else item.btn.innerText = originalText;
+              item.btn.disabled = false;
             }
-          } catch (error) {
-            alert('Network error. Please check your connection and try again.');
-          } finally {
-            if(btn.value) btn.value = originalText;
-            else btn.innerText = originalText;
-            btn.disabled = false;
-          }
-        });
+          });
+        }
       });
     });
   </script>
