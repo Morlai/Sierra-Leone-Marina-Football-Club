@@ -815,7 +815,7 @@
         <h3>Never Miss a Story</h3>
         <p>Get the latest match reports, academy news, and community updates delivered straight to your inbox.</p>
         
-        <!-- WORKING NEWSLETTER FORM (Inline) -->
+        <!-- ✅ CORRECTED FORM ID HERE -->
         <form id="newsletterForm" action="https://formspree.io/f/xdaqpaok" method="POST" class="newsletter-form-inline">
           <input type="hidden" name="_subject" value="New Newsletter Subscription - SL Mariners FC">
           <input type="email" name="email" placeholder="Enter your email address" required>
@@ -875,8 +875,8 @@
             <h4>Join Our Newsletter</h4>
             <p>Stay updated with match schedules, academy news, and community events. Join the Mariners family today!</p>
             
-            <!-- WORKING NEWSLETTER FORM (Footer) -->
-            <form id="footerNewsletterForm" action="https://formspree.io/f/xdqpaok" method="POST">
+            <!-- ✅ CORRECTED FORM ID HERE -->
+            <form id="footerNewsletterForm" action="https://formspree.io/f/xdaqpaok" method="POST">
               <input type="hidden" name="_subject" value="New Newsletter Subscription - SL Mariners FC">
               <input type="email" name="email" placeholder="Enter your email" required>
               <input type="submit" value="Subscribe" id="footerNewsletterBtn">
@@ -925,8 +925,6 @@
   <!-- Custom JS for mobile menu, close/reopen, and newsletter forms -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      console.log("✅ Script loaded successfully.");
-
       const navbar = document.getElementById('navbar');
       const closeBtn = document.getElementById('mobile-menu-close');
       const reopenBtn = document.getElementById('mobile-menu-reopen');
@@ -965,28 +963,17 @@
       });
 
       // ==========================================
-      // Newsletter Form Handler (With Debugging)
+      // Newsletter Form Handler
       // ==========================================
       const newsletterForms = [
-        { 
-          form: document.getElementById('newsletterForm'), 
-          btn: document.getElementById('newsletterBtn'), 
-          status: document.getElementById('newsletter-status') 
-        },
-        { 
-          form: document.getElementById('footerNewsletterForm'), 
-          btn: document.getElementById('footerNewsletterBtn'), 
-          status: document.getElementById('footerNewsletterStatus') 
-        }
+        { form: document.getElementById('newsletterForm'), btn: document.getElementById('newsletterBtn'), status: document.getElementById('newsletter-status') },
+        { form: document.getElementById('footerNewsletterForm'), btn: document.getElementById('footerNewsletterBtn'), status: document.getElementById('footerNewsletterStatus') }
       ];
       
-      newsletterForms.forEach((item, index) => {
+      newsletterForms.forEach(item => {
         if (item.form) {
-          console.log(`✅ Form ${index + 1} found and attached.`);
-          
           item.form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            console.log(`🚀 Form ${index + 1} submitted. Preventing default reload.`);
             
             let originalText = item.btn.value || item.btn.innerText;
             if(item.btn.value) item.btn.value = 'Subscribing...';
@@ -996,14 +983,11 @@
             if(item.status) item.status.style.display = 'none';
 
             try {
-              console.log("📡 Sending request to Formspree...");
               const response = await fetch(item.form.action, {
                 method: 'POST',
                 body: new FormData(item.form),
                 headers: { 'Accept': 'application/json' }
               });
-
-              console.log("📥 Formspree response status:", response.status);
 
               if (response.ok) {
                 item.form.reset();
@@ -1014,22 +998,16 @@
                   alert('Thanks for Subscribing!');
                 }
               } else {
-                const errorData = await response.json().catch(() => ({}));
-                console.error("❌ Formspree error:", errorData);
-                alert('Error: Formspree returned status ' + response.status + '.\n\nPlease check your Formspree Dashboard to ensure the Form ID "' + item.form.action.split('/').pop() + '" is correct and activated.');
+                alert('There was a problem subscribing. Please try again.');
               }
             } catch (error) {
-              console.error("❌ Network error:", error);
-              alert('Network error. Please check your internet connection.\n\nDetails: ' + error.message);
+              alert('Network error. Please check your connection and try again.');
             } finally {
               if(item.btn.value) item.btn.value = originalText;
               else item.btn.innerText = originalText;
               item.btn.disabled = false;
-              console.log("🔄 Button reset to original state.");
             }
           });
-        } else {
-          console.warn(`⚠️ Form ${index + 1} NOT found in the DOM. Check the IDs.`);
         }
       });
     });
