@@ -29,7 +29,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Custom CSS for mobile menu -->
+  <!-- Custom CSS for mobile menu with orange background -->
   <style>
     @media (max-width: 991.98px) {
       /* Force the hamburger menu icon to always display on all mobile screens */
@@ -37,8 +37,8 @@
         display: flex !important; 
         align-items: center;
         justify-content: center;
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         font-size: 24px;
         color: #1e3c72;
         cursor: pointer;
@@ -64,26 +64,19 @@
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
-        background: #ffffff !important;
+        background: #eb5d1e !important; /* ORANGE BACKGROUND */
         z-index: 9998 !important;
         max-height: calc(100vh - 70px) !important;
         overflow-y: auto !important;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
         padding: 20px 0 !important;
         display: none !important; 
       }
       
-      /* Class added by JS to show the menu - with orange background */
+      /* Class added by JS to show the menu */
       #navbar.navbar-mobile {
         display: block !important;
-        background: #eb5d1e !important; /* Orange background when expanded */
       }
 
-      /* Make menu items white text on orange background */
-      #navbar.navbar-mobile ul li a {
-        color: #ffffff !important;
-      }
-      
       #navbar > ul {
         display: block !important;
         padding: 0 20px !important;
@@ -108,6 +101,17 @@
       #navbar .dropdown.dropdown-active > ul { 
         display: block !important; 
       }
+      
+      /* Make menu items text white for contrast against orange background */
+      #navbar a {
+        color: white !important;
+      }
+      #navbar .dropdown > a {
+        color: white !important;
+      }
+      #navbar .dropdown > ul > li > a {
+        color: #333 !important;
+      }
     }
 
     /* On desktop, hide the mobile toggle */
@@ -127,7 +131,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="menu-closed">
 
 <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -137,7 +141,7 @@
       <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-hidden">
         <ul>
           <li><a href="index.html">Home</a></li>
 
@@ -533,10 +537,19 @@
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
       const navbar = document.getElementById('navbar');
       const dropdownToggles = document.querySelectorAll('#navbar .dropdown > a');
+      
+      // Add class to body on mobile to track menu state
+      if (window.innerWidth < 992) {
+        document.body.classList.add('menu-closed');
+      }
+
+      // Set initial state - menu should be closed on load
+      navbar.classList.add('navbar-hidden');
 
       if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', function(e) {
           navbar.classList.toggle('navbar-mobile');
+          document.body.classList.toggle('menu-closed');
           this.classList.toggle('bi-list');
           this.classList.toggle('bi-x');
         });
