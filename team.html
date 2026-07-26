@@ -319,14 +319,26 @@
       font-size: 1.05rem;
     }
 
-    /* Mobile Responsiveness for Overlap */
+    /* Mobile Responsiveness for Overlap - CENTERED ON MOBILE */
     @media (max-width: 768px) {
-      .team .member-info {
-        margin: -40px 15px 0;
-        padding: 25px 15px 30px;
+      .team .member {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the image and info card */
+      }
+      .team .member-img {
+        width: 100%;
+        max-width: 320px; /* Prevents image from stretching too wide on phones */
       }
       .team .member-img img {
         height: 320px;
+        width: 100%;
+      }
+      .team .member-info {
+        margin: -40px 0 0; /* Removes side margins so it centers perfectly */
+        padding: 25px 15px 30px;
+        width: 100%;
+        max-width: 320px;
       }
     }
   </style>
