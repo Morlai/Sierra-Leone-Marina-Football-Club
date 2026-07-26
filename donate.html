@@ -31,7 +31,7 @@
 
   <!-- Custom CSS for Donate Page -->
   <style>
-    /* Mobile Menu Styles (Preserved from other pages) */
+    /* Mobile Menu Styles (Exact match from index.html) */
     #mobile-menu-reopen {
       display: none;
       position: fixed;
@@ -74,6 +74,7 @@
     @media (max-width: 991.98px) {
       .mobile-nav-toggle { display: none !important; }
       #mobile-menu-close { display: flex !important; }
+      
       #navbar {
         position: fixed !important;
         top: 60px !important;
@@ -108,7 +109,11 @@
         visibility: visible !important;
       }
       #navbar .dropdown.dropdown-active > ul { display: block !important; }
+      
+      /* When menu is hidden */
       #navbar.navbar-hidden { display: none !important; }
+      
+      /* Show the reopen button when menu is hidden */
       #navbar.navbar-hidden ~ #mobile-menu-reopen,
       body.menu-closed #mobile-menu-reopen { display: flex !important; }
     }
@@ -357,14 +362,14 @@
   </style>
 </head>
 
-<body>
+<body class="menu-closed">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt="SL Mariners FC"></a></h1>
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-hidden">
         <button id="mobile-menu-close" aria-label="Close menu">&times;</button>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -405,7 +410,6 @@
   </section>
 
   <main id="main">
-    <!-- (Previous sections: Where Your Donation Goes, Choose Your Impact Level, How to Donate remain exactly the same as your previous code) -->
     <section class="py-5">
       <div class="container">
         <div class="section-title-custom" data-aos="fade-up">
@@ -672,7 +676,6 @@
       </div>
     </section>
 
-    <!-- (Remaining sections: Stories of Change, FAQ, Final CTA, Footer remain exactly the same) -->
     <section class="py-5">
       <div class="container">
         <div class="section-title-custom" data-aos="fade-up">
@@ -933,7 +936,7 @@
 
           try {
             // 1. Send data to Formspree via AJAX
-            const response = await fetch("https://formspree.io/f/mnjevbbd", {
+            const response = await fetch("https://formspree.io/f/xdaqpaok", {
               method: 'POST',
               body: formData,
               headers: {
