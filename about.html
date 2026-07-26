@@ -29,47 +29,51 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Custom CSS for reliable mobile menu -->
+  <!-- BULLETPROOF Custom CSS for mobile menu -->
   <style>
     @media (max-width: 991.98px) {
-      /* Force the hamburger menu icon to always display on all mobile screens */
-      .mobile-nav-toggle { 
-        display: flex !important; 
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-        color: #1e3c72;
-        cursor: pointer;
-        z-index: 99999;
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        background: #ffffff;
-        border-radius: 4px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      /* FORCE the hamburger menu icon to display on all mobile screens */
+      .mobile-nav-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 26px !important;
+        color: #ffffff !important;
+        background-color: #eb5d1e !important; /* Club orange to make it pop */
+        border-radius: 50% !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+        cursor: pointer !important;
+        z-index: 999999 !important;
+        position: fixed !important;
+        top: 12px !important;
+        right: 15px !important;
+        border: none !important;
+        outline: none !important;
       }
       
-      /* Hide any conflicting custom buttons */
-      #mobile-menu-close,
-      #mobile-menu-reopen { 
-        display: none !important; 
+      /* Change color to blue when menu is open (X icon) */
+      .mobile-nav-toggle.bi-x {
+        background-color: #1e3c72 !important;
+      }
+
+      /* Hide social links on mobile to prevent crowding the header */
+      .header-social-links {
+        display: none !important;
       }
 
       /* Mobile menu container - hidden by default */
       #navbar {
         position: fixed !important;
-        top: 70px !important;
+        top: 0 !important;
         left: 0 !important;
-        right: 0 !important;
         width: 100% !important;
+        height: 100vh !important;
         background: #ffffff !important;
-        z-index: 9998 !important;
-        max-height: calc(100vh - 70px) !important;
+        z-index: 99998 !important;
         overflow-y: auto !important;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-        padding: 20px 0 !important;
+        padding-top: 80px !important;
         display: none !important; 
       }
       
@@ -88,7 +92,7 @@
         width: 100% !important;
         text-align: center !important;
         border-bottom: 1px solid #f0f0f0 !important;
-        padding: 12px 0 !important;
+        padding: 15px 0 !important;
       }
 
       /* Hide dropdowns by default on mobile */
@@ -104,10 +108,13 @@
       }
     }
 
-    /* On desktop, hide the mobile toggle */
+    /* On desktop, hide the mobile toggle and show social links */
     @media (min-width: 992px) {
       .mobile-nav-toggle {
         display: none !important;
+      }
+      .header-social-links {
+        display: flex !important;
       }
     }
   </style>
@@ -128,8 +135,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt=""></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
-      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -150,14 +155,14 @@
           <li><a href="donate.html">Donate</a></li>
           <li><a href="blog.html">Review</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-
         </ul>
       </nav><!-- .navbar -->
 
-      <!-- Standard hamburger icon moved OUTSIDE the navbar so it doesn't get hidden -->
-      <i class="bi bi-list mobile-nav-toggle"></i>
+      <!-- BULLETPROOF MOBILE TOGGLE BUTTON (d-lg-none ensures it only shows on mobile) -->
+      <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
 
-      <div class="header-social-links d-flex">
+      <!-- Social links (hidden on mobile via CSS to save space) -->
+      <div class="header-social-links d-none d-lg-flex">
         <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
         <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
@@ -173,7 +178,6 @@
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
           <h2>About</h2>
           <ol>
@@ -181,34 +185,27 @@
             <li>About</li>
           </ol>
         </div>
-
       </div>
     </section><!-- End Breadcrumbs -->
 	
 	    <!-- ======= About Us Section ======= -->
     <section id="about-us" class="about-us">
       <div class="container" data-aos="fade-up">
-
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right">
             <h2>About SL Marina Football Club</h2>
             <p>Empowering the youth of Freetown through the beautiful game of football, fostering talent, discipline, and community spirit.</p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-            <p>
-              Founded with a passion for sports and community development, SL Marina Football Club is more than just a team. We are a family dedicated to nurturing local talent in Sierra Leone, providing a safe and structured environment for young athletes to thrive both on and off the pitch.
-            </p>
+            <p>Founded with a passion for sports and community development, SL Marina Football Club is more than just a team. We are a family dedicated to nurturing local talent in Sierra Leone, providing a safe and structured environment for young athletes to thrive both on and off the pitch.</p>
             <ul>
               <li><i class="ri-check-double-line"></i> Professional youth development and football training</li>
               <li><i class="ri-check-double-line"></i> Community outreach and social empowerment programs</li>
               <li><i class="ri-check-double-line"></i> Promoting teamwork, discipline, and healthy lifestyles</li>
             </ul>
-            <p class="fst-italic">
-              Our vision is to become a leading football institution in West Africa, producing top-tier athletes who will represent Sierra Leone on the global stage while giving back to their communities.
-            </p>
+            <p class="fst-italic">Our vision is to become a leading football institution in West Africa, producing top-tier athletes who will represent Sierra Leone on the global stage while giving back to their communities.</p>
           </div>
         </div>
-
       </div>
     </section><!-- End About Us Section -->
 
@@ -222,12 +219,8 @@
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right">
             <h3>Building a Legacy in Freetown</h3>
-            <p>
-              What started as a group of passionate young players gathering at the local pitches has grown into a structured football club with a clear mission. SL Mariners FC was established to keep the youth engaged, away from the streets, and focused on education and sports.
-            </p>
-            <p>
-              Over the years, we have participated in numerous regional tournaments, built partnerships with local sponsors, and created a support system that helps our players succeed in life, not just in football.
-            </p>
+            <p>What started as a group of passionate young players gathering at the local pitches has grown into a structured football club with a clear mission. SL Mariners FC was established to keep the youth engaged, away from the streets, and focused on education and sports.</p>
+            <p>Over the years, we have participated in numerous regional tournaments, built partnerships with local sponsors, and created a support system that helps our players succeed in life, not just in football.</p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
             <h3>Key Milestones</h3>
@@ -237,9 +230,7 @@
               <li><i class="ri-check-double-line"></i> Partnered with local businesses and sponsors to provide kits and equipment.</li>
               <li><i class="ri-check-double-line"></i> Organized community charity matches to support local causes.</li>
             </ul>
-            <p class="fst-italic">
-              Every day, we continue to write our history with every pass, every goal, and every young life we touch.
-            </p>
+            <p class="fst-italic">Every day, we continue to write our history with every pass, every goal, and every young life we touch.</p>
           </div>
         </div>
       </div>
@@ -248,14 +239,11 @@
     <!-- ======= Our Team Section ======= -->
     <section id="team" class="team">
       <div class="container">
-
         <div class="section-title" data-aos="fade-up">
           <h2>Our <strong>Team</strong></h2>
           <p>Meet the dedicated management and coaching staff working behind the scenes to drive SL Marina FC forward and support our players.</p>
         </div>
-
         <div class="row">
-
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
@@ -273,7 +261,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
@@ -291,7 +278,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
@@ -309,7 +295,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
@@ -327,123 +312,97 @@
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Our Team Section -->
 	
 	<!-- ======= Our Clients Section ======= -->
     <section id="clients" class="clients section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Our Sponsors</h2>
         </div>
-
         <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
             </div>
           </div>
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-2.jpg" class="img-fluid" alt="">
             </div>
           </div>
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-3.jpg" class="img-fluid" alt="">
             </div>
           </div>
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-4.jpg" class="img-fluid" alt="">
             </div>
           </div>
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-5.jpg" class="img-fluid" alt="">
             </div>
           </div>
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-6.jpg" class="img-fluid" alt="">
             </div>
           </div>
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-7.jpg" class="img-fluid" alt="">
             </div>
           </div>
-
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-8.jpg" class="img-fluid" alt="">
             </div>
           </div>
-		  
 		  <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-13.png" class="img-fluid" alt="">
             </div>
           </div>
-		  
 		  <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-10.png" class="img-fluid" alt="">
             </div>
           </div>
-		  
 		  <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-11.jpg" class="img-fluid" alt="">
             </div>
           </div>
-		  
 		  <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
               <img src="assets/img/clients/client-12.jpg" class="img-fluid" alt="">
             </div>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Our Clients Section -->
 
   </main><!-- End #main -->
   
- <!-- ======= Our Skills Section ======= -->
- <!-- End Our Skills Section -->
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>SL Mariners FC</h3>
-            <p>
-               2 <sup>A</sup> Fisher Street, Off Sani Abacha <br>
-              Freetown<br>
-              Sierra Leone <br><br>
+            <p>2 <sup>A</sup> Fisher Street, Off Sani Abacha <br>Freetown<br>Sierra Leone <br><br>
               <strong>Phone:</strong> +232 76391399<br>
               <strong>Email:</strong> slmarinersfc@gmail.com<br>
             </p>
           </div>
 		  
-		   <div class="col-lg-2 col-md-6 footer-links">
+		  <div class="col-lg-2 col-md-6 footer-links">
             <h4>Menu</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
@@ -456,7 +415,7 @@
             </ul>
           </div>
 		  
-		   <div class="col-lg-3 col-md-6 footer-links">
+		  <div class="col-lg-3 col-md-6 footer-links">
             <h4>What We Do</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="getinvolved.html">Get Involved Details</a></li>
@@ -467,7 +426,6 @@
             </ul>
           </div>
           
-          <!-- Restored Newsletter Wrapper with Working Form -->
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Stay updated with match schedules, academy news, and community events. Join the Mariners family today!</p>
@@ -482,13 +440,11 @@
               <i class="bi bi-check-circle-fill"></i> Thank you for subscribing!
             </p>
           </div>
-
         </div>
       </div>
     </div>
 		  
     <div class="container d-md-flex py-4">
-
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
           &copy; 2019 Copyright <strong><span>SL Mariners FC</span></strong>. All Rights Reserved.
@@ -503,7 +459,6 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-
   </footer><!-- End Footer -->
 	
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -553,8 +508,7 @@
 
       if (newsletterForm) {
         newsletterForm.addEventListener('submit', async function(e) {
-          e.preventDefault(); // Prevent default page reload
-          
+          e.preventDefault();
           const originalText = newsletterBtn.value;
           newsletterBtn.value = 'Subscribing...';
           newsletterBtn.disabled = true;
@@ -568,13 +522,9 @@
             });
 
             if (response.ok) {
-              newsletterForm.reset(); // Clears the input field
-              newsletterStatus.style.display = 'block'; // Shows success message
-              
-              // Hide the success message after 4 seconds
-              setTimeout(() => {
-                newsletterStatus.style.display = 'none';
-              }, 4000);
+              newsletterForm.reset();
+              newsletterStatus.style.display = 'block';
+              setTimeout(() => { newsletterStatus.style.display = 'none'; }, 4000);
             } else {
               alert('There was a problem subscribing. Please try again.');
             }
@@ -590,5 +540,4 @@
   </script>
 
 </body>
-
 </html>
