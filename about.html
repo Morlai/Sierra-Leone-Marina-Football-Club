@@ -31,7 +31,7 @@
 
   <!-- Custom CSS for mobile menu -->
   <style>
-    /* Reopen button - hidden by default, shown when menu is closed */
+    /* Reopen button - visible by default on mobile, hidden on desktop */
     #mobile-menu-reopen {
       display: none;
       position: fixed;
@@ -79,6 +79,9 @@
       /* Show the close button inside the menu */
       #mobile-menu-close { display: flex !important; }
       
+      /* Show the reopen button by default on mobile */
+      #mobile-menu-reopen { display: flex !important; }
+      
       /* Make the navigation menu fully visible, stacked, and scrollable on mobile */
       #navbar {
         position: fixed !important;
@@ -117,15 +120,14 @@
       /* Show dropdown when the parent li has the 'dropdown-active' class */
       #navbar .dropdown.dropdown-active > ul { display: block !important; }
       
-      /* When menu is hidden */
+      /* When menu is hidden (collapsed) */
       #navbar.navbar-hidden { display: none !important; }
       
-      /* Show the reopen button when menu is hidden */
-      #navbar.navbar-hidden ~ #mobile-menu-reopen,
-      body.menu-closed #mobile-menu-reopen { display: flex !important; }
+      /* Hide reopen button when menu is open */
+      body:not(.menu-closed) #mobile-menu-reopen { display: none !important; }
     }
     
-    /* On desktop, hide both buttons */
+    /* On desktop, hide both buttons and show normal nav */
     @media (min-width: 992px) {
       #mobile-menu-close, #mobile-menu-reopen { display: none !important; }
     }
@@ -140,7 +142,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="menu-closed">
 
 <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -150,7 +152,7 @@
       <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-hidden">
         <button id="mobile-menu-close" aria-label="Close menu">&times;</button>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -550,6 +552,12 @@
       const reopenBtn = document.getElementById('mobile-menu-reopen');
       const dropdownToggles = document.querySelectorAll('#navbar .dropdown > a');
 
+      // Check if mobile on load and ensure menu is closed
+      if (window.innerWidth < 992) {
+        navbar.classList.add('navbar-hidden');
+        document.body.classList.add('menu-closed');
+      }
+
       dropdownToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
           if (window.innerWidth < 992) {
@@ -575,6 +583,14 @@
         if (window.innerWidth >= 992) {
           navbar.classList.remove('navbar-hidden');
           document.body.classList.remove('menu-closed');
+        } else {
+          // On mobile, keep it closed by default unless user opened it
+          if (!navbar.classList.contains('navbar-hidden') && document.body.classList.contains('menu-closed')) {
+             // User had it open, keep it open
+          } else {
+             navbar.classList.add('navbar-hidden');
+             document.body.classList.add('menu-closed');
+          }
         }
       });
 
