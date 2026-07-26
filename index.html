@@ -31,7 +31,7 @@
 
   <!-- Custom CSS for mobile menu with close button -->
   <style>
-    /* Reopen button - visible by default on mobile, hidden on desktop */
+    /* Reopen button - hidden by default on desktop, visible on mobile */
     #mobile-menu-reopen {
       display: none;
       position: fixed;
@@ -43,12 +43,13 @@
       color: #fff;
       border: none;
       border-radius: 50%;
-      font-size: 22px;
-      z-index: 99999;
+      font-size: 24px;
+      z-index: 999999; /* Extremely high to ensure it's always on top of everything */
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       align-items: center;
       justify-content: center;
+      transition: all 0.3s ease;
     }
     #mobile-menu-reopen:hover {
       background: #c94e16;
@@ -58,19 +59,20 @@
     #mobile-menu-close {
       display: none;
       position: absolute;
-      top: 10px;
+      top: 15px;
       right: 15px;
-      width: 35px;
-      height: 35px;
+      width: 45px;
+      height: 45px;
       background: #eb5d1e;
       color: #fff;
       border: none;
       border-radius: 50%;
-      font-size: 18px;
+      font-size: 24px;
       cursor: pointer;
-      z-index: 10000;
+      z-index: 100000;
       align-items: center;
       justify-content: center;
+      transition: all 0.3s ease;
     }
     #mobile-menu-close:hover {
       background: #c94e16;
@@ -82,36 +84,33 @@
         display: none !important;
       }
 
-      /* Show the close button inside the menu */
-      #mobile-menu-close {
-        display: flex !important;
-      }
-
-      /* Show the reopen button by default on mobile */
+      /* Force show the close and reopen buttons on all mobile screens */
+      #mobile-menu-close,
       #mobile-menu-reopen {
         display: flex !important;
       }
 
-      /* Make the navigation menu fully visible, stacked, and scrollable on mobile */
+      /* Hide social links on mobile to prevent header crowding */
+      .header-social-links {
+        display: none !important;
+      }
+
+      /* Make the navigation menu full screen and scrollable on mobile */
       #navbar {
         position: fixed !important;
-        top: 60px !important;
+        top: 0 !important;
         left: 0 !important;
-        right: 0 !important;
         width: 100% !important;
+        height: 100vh !important;
         background: #ffffff !important;
-        z-index: 9999 !important;
-        max-height: calc(100vh - 60px) !important;
+        z-index: 99998 !important; /* Just below the reopen button */
         overflow-y: auto !important;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-        padding-top: 10px !important;
+        padding-top: 80px !important; /* Space for the close button */
       }
 
       #navbar > ul {
         display: block !important;
-        position: relative !important;
-        background: #ffffff !important;
-        padding-top: 30px !important; /* space for close button */
+        padding: 0 20px !important;
       }
 
       #navbar > ul > li {
@@ -119,6 +118,7 @@
         width: 100% !important;
         text-align: center !important;
         border-bottom: 1px solid #f0f0f0 !important;
+        padding: 15px 0 !important;
       }
 
       /* Hide dropdowns by default on mobile */
@@ -127,8 +127,6 @@
         position: relative !important;
         background: #f8f9fa !important;
         box-shadow: none !important;
-        opacity: 1 !important;
-        visibility: visible !important;
       }
 
       /* Show dropdown when the parent li has the 'dropdown-active' class */
@@ -140,18 +138,21 @@
       #navbar.navbar-hidden {
         display: none !important;
       }
-
+      
       /* Hide reopen button when menu is open */
       body:not(.menu-closed) #mobile-menu-reopen {
         display: none !important;
       }
     }
 
-    /* On desktop, hide both buttons */
+    /* On desktop, hide both buttons and show normal nav/social */
     @media (min-width: 992px) {
       #mobile-menu-close,
       #mobile-menu-reopen {
         display: none !important;
+      }
+      .header-social-links {
+        display: flex !important;
       }
     }
   </style>
@@ -198,10 +199,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <!-- Reopen button - appears when menu is closed on mobile -->
-      <button id="mobile-menu-reopen" aria-label="Open menu"><i class="bi bi-list"></i></button>
-
-      <div class="header-social-links d-flex">
+      <div class="header-social-links d-flex d-none d-lg-flex">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
@@ -209,6 +207,9 @@
       </div>
 
     </div>
+    
+    <!-- Reopen button moved outside container to prevent flexbox squishing on mobile -->
+    <button id="mobile-menu-reopen" aria-label="Open menu"><i class="bi bi-list"></i></button>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
