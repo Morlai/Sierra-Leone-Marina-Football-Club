@@ -31,7 +31,7 @@
 
   <!-- Custom CSS for mobile menu with close button -->
   <style>
-    /* Reopen button - hidden by default, shown when menu is closed */
+    /* Reopen button - visible by default on mobile, hidden on desktop */
     #mobile-menu-reopen {
       display: none;
       position: fixed;
@@ -87,6 +87,11 @@
         display: flex !important;
       }
 
+      /* Show the reopen button by default on mobile */
+      #mobile-menu-reopen {
+        display: flex !important;
+      }
+
       /* Make the navigation menu fully visible, stacked, and scrollable on mobile */
       #navbar {
         position: fixed !important;
@@ -131,15 +136,14 @@
         display: block !important;
       }
 
-      /* When menu is hidden */
+      /* When menu is hidden (collapsed) */
       #navbar.navbar-hidden {
         display: none !important;
       }
 
-      /* Show the reopen button when menu is hidden */
-      #navbar.navbar-hidden ~ #mobile-menu-reopen,
-      body.menu-closed #mobile-menu-reopen {
-        display: flex !important;
+      /* Hide reopen button when menu is open */
+      body:not(.menu-closed) #mobile-menu-reopen {
+        display: none !important;
       }
     }
 
@@ -161,7 +165,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="menu-closed">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -169,7 +173,7 @@
 
       <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/SL Mariners FC logo.png"  alt="SL Mariners FC"></a></h1>
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar order-last order-lg-0 navbar-hidden">
         <button id="mobile-menu-close" aria-label="Close menu">&times;</button>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
@@ -716,6 +720,12 @@
       const reopenBtn = document.getElementById('mobile-menu-reopen');
       const dropdownToggles = document.querySelectorAll('#navbar .dropdown > a');
 
+      // Check if mobile on load and ensure menu is closed
+      if (window.innerWidth < 992) {
+        navbar.classList.add('navbar-hidden');
+        document.body.classList.add('menu-closed');
+      }
+
       // Dropdown expand/collapse on mobile
       dropdownToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
@@ -745,6 +755,14 @@
         if (window.innerWidth >= 992) {
           navbar.classList.remove('navbar-hidden');
           document.body.classList.remove('menu-closed');
+        } else {
+          // On mobile, keep it closed by default unless user opened it
+          if (!navbar.classList.contains('navbar-hidden') && document.body.classList.contains('menu-closed')) {
+             // User had it open, keep it open
+          } else {
+             navbar.classList.add('navbar-hidden');
+             document.body.classList.add('menu-closed');
+          }
         }
       });
 
