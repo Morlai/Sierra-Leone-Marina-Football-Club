@@ -35,20 +35,20 @@
       /* Force the hamburger menu icon to always display on all mobile screens */
       .mobile-nav-toggle { 
         display: flex !important; 
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-        color: #1e3c72;
-        cursor: pointer;
-        z-index: 99999;
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        background: #ffffff;
-        border-radius: 50%;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        align-items: center !important;
+        justify-content: center !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 24px !important;
+        color: #1e3c72 !important;
+        cursor: pointer !important;
+        z-index: 99999 !important;
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        background: #ffffff !important;
+        border-radius: 50% !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
       }
       
       /* Hide any conflicting custom buttons */
@@ -59,21 +59,22 @@
 
       /* Mobile menu container - hidden by default */
       #navbar {
+        display: none !important;
         position: fixed !important;
         top: 70px !important;
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
-        background: #eb5d1e !important; /* ORANGE BACKGROUND */
+        background-color: #eb5d1e !important; /* ORANGE BACKGROUND */
         z-index: 9998 !important;
         max-height: calc(100vh - 70px) !important;
         overflow-y: auto !important;
         padding: 20px 0 !important;
-        display: none !important; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
       }
       
-      /* Class added by JS to show the menu */
-      #navbar.navbar-mobile {
+      /* Show the menu ONLY when the template's JS adds 'mobile-nav-active' to the body */
+      body.mobile-nav-active #navbar {
         display: block !important;
       }
 
@@ -86,31 +87,25 @@
         display: block !important;
         width: 100% !important;
         text-align: center !important;
-        border-bottom: 1px solid #f0f0f0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.2) !important;
         padding: 12px 0 !important;
+      }
+
+      /* Make text white for contrast against orange background */
+      #navbar a {
+        color: #ffffff !important;
       }
 
       /* Hide dropdowns by default on mobile */
       #navbar .dropdown > ul {
         display: none !important;
-        background: #f8f9fa !important;
+        background: rgba(0,0,0,0.1) !important;
         padding: 10px 0 !important;
       }
 
       /* Show dropdown when active */
       #navbar .dropdown.dropdown-active > ul { 
         display: block !important; 
-      }
-      
-      /* Make menu items text white for contrast against orange background */
-      #navbar a {
-        color: white !important;
-      }
-      #navbar .dropdown > a {
-        color: white !important;
-      }
-      #navbar .dropdown > ul > li > a {
-        color: #333 !important;
       }
     }
 
@@ -131,7 +126,7 @@
   ======================================================== -->
 </head>
 
-<body class="menu-closed">
+<body>
 
 <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -141,7 +136,7 @@
       <!-- Uncomment below if you prefer to use an image logo <span>SL Marina<br>Foot</span>ball Club -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0 navbar-hidden">
+      <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="index.html">Home</a></li>
 
@@ -530,32 +525,11 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Custom JS for reliable mobile menu and newsletter form -->
+  <!-- Custom JS for dropdowns and newsletter form only -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 1. Reliable Mobile Menu Toggle
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      const navbar = document.getElementById('navbar');
+      // 1. Dropdown expand/collapse on mobile
       const dropdownToggles = document.querySelectorAll('#navbar .dropdown > a');
-      
-      // Add class to body on mobile to track menu state
-      if (window.innerWidth < 992) {
-        document.body.classList.add('menu-closed');
-      }
-
-      // Set initial state - menu should be closed on load
-      navbar.classList.add('navbar-hidden');
-
-      if (mobileNavToggle) {
-        mobileNavToggle.addEventListener('click', function(e) {
-          navbar.classList.toggle('navbar-mobile');
-          document.body.classList.toggle('menu-closed');
-          this.classList.toggle('bi-list');
-          this.classList.toggle('bi-x');
-        });
-      }
-
-      // Dropdown expand/collapse on mobile
       dropdownToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
           if (window.innerWidth < 992) {
